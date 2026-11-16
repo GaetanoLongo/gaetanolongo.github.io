@@ -27,11 +27,13 @@ const url = new URL(Astro.url.pathname, Astro.site).href;
       <a class="meta" href={`/${lang}/recipes/`}>← {t.sections.recipes.title}</a>
       <h1>{d.title}</h1>
       <p class="lead">{d.description}</p>
-      <dl class="facts">
-        <div><dt>{r.servings}</dt><dd>{d.servings}</dd></div>
-        <div><dt>{r.prep}</dt><dd>{d.prep}</dd></div>
-        {d.cook && <div><dt>{r.cook}</dt><dd>{d.cook}</dd></div>}
-      </dl>
+      {(d.servings || d.prep || d.cook) && (
+        <dl class="facts">
+          {d.servings && <div><dt>{r.servings}</dt><dd>{d.servings}</dd></div>}
+          {d.prep && <div><dt>{r.prep}</dt><dd>{d.prep}</dd></div>}
+          {d.cook && <div><dt>{r.cook}</dt><dd>{d.cook}</dd></div>}
+        </dl>
+      )}
       <div class="actions"><button class="btn" type="button" data-print>{r.print}</button></div>
     </header>
 

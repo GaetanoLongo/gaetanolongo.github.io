@@ -49,8 +49,8 @@ const recipes = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
-    servings: z.string(), // free text: "2 loaves", "4 people"
-    prep: z.string(), // "30 min"
+    servings: z.string().optional(), // free text: "2 loaves", "4 people"
+    prep: z.string().optional(), // "30 min"
     cook: z.string().optional(),
     tags: z.array(z.string()).default([]),
     ingredients: z.array(z.object({ q: z.string(), i: z.string() })),

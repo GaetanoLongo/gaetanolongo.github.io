@@ -89,9 +89,9 @@ Use `filesSoon: true` in the front matter to show "files not online yet" when th
 title: "Name"
 description: "One sentence."
 date: 2026-11-30
-servings: "4 people"
+servings: "4 people"    # servings, prep and cook are all optional
 prep: "30 min"
-cook: "45 min"          # optional
+cook: "45 min"
 tags: ["bread"]
 ingredients:
   - { q: "500 g", i: "Flour" }
