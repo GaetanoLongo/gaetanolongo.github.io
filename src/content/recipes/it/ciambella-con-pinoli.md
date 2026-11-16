@@ -3,6 +3,7 @@ title: "Ciambella con pinoli"
 description: "Ciambella al cacao e yogurt con pinoli, misurata a vasetti."
 date: 2026-11-16
 cook: "40 min"
+oven: "180 °C"
 tags: ["dolci", "torte"]
 ingredients:
   - { q: "3", i: "Uova" }

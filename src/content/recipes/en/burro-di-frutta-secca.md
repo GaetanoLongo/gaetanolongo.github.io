@@ -3,6 +3,7 @@ title: "Nut butter"
 description: "Roasted nuts blended until liquid: hazelnuts, walnuts, almonds, or whichever you like."
 date: 2026-11-16
 cook: "30 min"
+oven: "130 °C (265 °F)"
 tags: ["nuts"]
 ingredients:
   - { q: "—", i: "Nuts of your choice (hazelnuts, walnuts, almonds, …)" }

@@ -3,6 +3,7 @@ title: "Blueberry cheesecake"
 description: "Baked ricotta cheesecake served with warm blueberry sauce."
 date: 2026-11-16
 cook: "1 hour"
+oven: "160 °C (320 °F)"
 tags: ["desserts", "cakes"]
 ingredients:
   - { q: "500 g (1.1 lb)", i: "Ricotta" }

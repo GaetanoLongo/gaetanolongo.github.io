@@ -3,6 +3,7 @@ title: "Biscotti da inzuppo"
 description: "Biscotti con ammoniaca per dolci, dall'impasto che riposa una notte."
 date: 2026-11-16
 cook: "15 min"
+oven: "180 °C"
 tags: ["dolci", "biscotti"]
 ingredients:
   - { q: "430 g", i: "Farina" }

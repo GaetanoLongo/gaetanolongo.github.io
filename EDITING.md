@@ -92,6 +92,8 @@ date: 2026-11-30
 servings: "4 people"    # servings, prep and cook are all optional
 prep: "30 min"
 cook: "45 min"
+oven: "180 °C"          # optional (English: "180 °C (355 °F)")
+source: "Name of the author or site"   # optional, leave out if none
 tags: ["bread"]
 ingredients:
   - { q: "500 g", i: "Flour" }

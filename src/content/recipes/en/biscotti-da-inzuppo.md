@@ -3,6 +3,7 @@ title: "Dunking biscuits"
 description: "Biscuits made with baker's ammonia, from a dough that rests overnight."
 date: 2026-11-16
 cook: "15 min"
+oven: "180 °C (355 °F)"
 tags: ["desserts", "biscuits"]
 ingredients:
   - { q: "430 g (15 oz)", i: "Flour" }

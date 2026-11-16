@@ -3,6 +3,7 @@ title: "Pine nut ring cake"
 description: "Cocoa and yogurt ring cake with pine nuts, measured with a yogurt pot."
 date: 2026-11-16
 cook: "40 min"
+oven: "180 °C (355 °F)"
 tags: ["desserts", "cakes"]
 ingredients:
   - { q: "3", i: "Eggs" }

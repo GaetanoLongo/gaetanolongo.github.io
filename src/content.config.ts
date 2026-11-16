@@ -52,6 +52,8 @@ const recipes = defineCollection({
     servings: z.string().optional(), // free text: "2 loaves", "4 people"
     prep: z.string().optional(), // "30 min"
     cook: z.string().optional(),
+    oven: z.string().optional(), // e.g. "180 °C"; leave out when unknown
+    source: z.string().optional(), // credit line, shown only when present
     tags: z.array(z.string()).default([]),
     ingredients: z.array(z.object({ q: z.string(), i: z.string() })),
   }),

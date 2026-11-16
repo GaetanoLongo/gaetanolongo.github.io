@@ -3,6 +3,7 @@ title: "Cheesecake ai mirtilli"
 description: "Cheesecake di ricotta cotta in forno, servita con salsa di mirtilli tiepida."
 date: 2026-11-16
 cook: "1 ora"
+oven: "160 °C"
 tags: ["dolci", "torte"]
 ingredients:
   - { q: "500 g", i: "Ricotta" }

@@ -3,6 +3,7 @@ title: "Burro di frutta secca"
 description: "Crema di frutta secca tostata e frullata fino a diventare liquida: nocciole, noci, mandorle o quella che preferisci."
 date: 2026-11-16
 cook: "30 min"
+oven: "130 °C"
 tags: ["frutta secca"]
 ingredients:
   - { q: "—", i: "Frutta secca a scelta (nocciole, noci, mandorle, …)" }
