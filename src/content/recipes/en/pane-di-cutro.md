@@ -1,6 +1,6 @@
 ---
 title: "Pane di “Cutro”"
-description: "Bread similar to Pane di Cutro, made with semolina and licoli fed with type 0 flour, with a final cold rise in the fridge."
+description: "Bread similar to Pane di Cutro, for two loaves, made with semolina and licoli fed with type 0 flour, with a cold rise in the fridge, baked with or without a Dutch oven."
 date: 2026-11-16
 servings: "2 loaves of about 1 kg (2.2 lb)"
 prep: "2 h bulk + 8-12 h in the fridge"
@@ -15,7 +15,7 @@ ingredients:
   - { q: "25 g (0.9 oz)", i: "Salt" }
 ---
 
-**Recipe made with licoli (liquid sourdough) fed with type 0 flour.** Quantities rounded to tens of grams.
+**Recipe for two loaves, made with licoli (liquid sourdough) fed with type 0 flour.** It can be baked with or without a Dutch oven (cast-iron pot). Quantities rounded to tens of grams.
 
 Totals, licoli included: flour 1250 g (2.8 lb): 940 g semolina + 310 g (11 oz) type 0 flour; water 840 g (30 oz); hydration 67%; semolina to flour ratio 3 : 1. The licoli is at 100% hydration (half flour, half water).
 
@@ -30,7 +30,11 @@ Totals, licoli included: flour 1250 g (2.8 lb): 940 g semolina + 310 g (11 
 4. **Dividing and preshaping (compulsory).** Divide into 2 pieces of about 1 kg (2.2 lb). Preshape like this: flatten slightly, fold into a parcel, seal underneath, tighten just enough. Rest: 20-25 min, covered. Here you break the giant pockets without losing the fine gas.
 5. **Final shaping, anti huge holes.** Shape the loaf: flatten slightly, press the centre, close the flaps well, with progressive, not violent tension. Goal: an even skin, air only spread out, no pockets.
 6. **Second rise in the fridge.** Floured banneton, well covered, at 4-8 °C (39-46 °F) for 8-12 hours. In the fridge the yeasts slow down, the gases even out and no giant bubbles form.
-7. **Baking.** Conventional oven (no fan) at 230 °C (445 °F). Bake the loaf cold, straight from the fridge. Slash: a real 1 cm (⅜ in) deep, with the blade at an angle. Bake 15 min at 230 °C (445 °F), open the door for 5-10 seconds, then continue at 200-205 °C (390-400 °F) for 25-30 min, with the door ajar for the last 10 min. Core temperature: 96-98 °C (205-208 °F).
+7. **Baking, with or without a Dutch oven (cast-iron pot).** Conventional oven (no fan) at 230 °C (445 °F). Bake the loaf cold, straight from the fridge. Slash: a real 1 cm (⅜ in) deep, with the blade at an angle.
+   - **With a Dutch oven:** bake 15 min at 230 °C (445 °F) with the lid on. Then take the lid off, so the moisture can escape, and continue at 200-205 °C (390-400 °F) for 25-30 min.
+   - **Without a Dutch oven, on a baking tray:** bake 15 min at 230 °C (445 °F), then open the oven door for 5-10 seconds, again to let the moisture escape, and continue at 200-205 °C (390-400 °F) for 25-30 min.
+
+   In both cases, keep the door ajar for the last 10 min. Core temperature: 96-98 °C (205-208 °F).
 
 ## The techniques, step by step
 

@@ -1,6 +1,6 @@
 ---
 title: "Pane di “Cutro”"
-description: "Pane di semola rimacinata simile al pane di Cutro, con licoli alimentato con farina 0 e lievitazione finale in frigo."
+description: "Pane di semola rimacinata simile al pane di Cutro, per due pagnotte, con licoli alimentato con farina 0, lievitazione finale in frigo e cottura con o senza pentola di ghisa."
 date: 2026-11-16
 servings: "2 pagnotte da circa 1 kg"
 prep: "2 h di puntata + 8-12 h in frigo"
@@ -15,7 +15,7 @@ ingredients:
   - { q: "25 g", i: "Sale" }
 ---
 
-**Ricetta con licoli alimentato con farina 0.** Quantità arrotondate alle decine di grammi.
+**Ricetta per due pagnotte, con licoli alimentato con farina 0.** Si può fare con o senza pentola di ghisa. Quantità arrotondate alle decine di grammi.
 
 Totali, licoli compreso: farina 1250 g (semola 940 g + farina 0 310 g), acqua 840 g, idratazione 67%, rapporto semola/farina 3 : 1. Il licoli è al 100% di idratazione (metà farina, metà acqua).
 
@@ -30,7 +30,11 @@ Totali, licoli compreso: farina 1250 g (semola 940 g + farina 0 310 g), acqua
 4. **Divisione e preforma (obbligatoria).** Dividi in 2 pezzi da circa 1 kg. Preforma così: appiattisci leggermente, piega a pacchetto, chiudi sotto, stringi quel tanto che basta. Riposo: 20-25 min, coperto. Qui rompi le sacche giganti senza perdere il gas fine.
 5. **Formatura definitiva, anti mega alveoli.** Forma la pagnotta: stendi leggermente, schiaccia il centro, chiudi bene i lembi, con tensione progressiva, non violenta. Obiettivo: pelle uniforme, aria solo diffusa, niente sacche.
 6. **Seconda lievitazione in frigo.** Cestino infarinato, coperto bene, a 4-8 °C per 8-12 ore. In frigo i lieviti rallentano, i gas si uniformano e non si formano bolle giganti.
-7. **Cottura.** Forno a 230 °C statico. Inforna la pagnotta fredda, direttamente dal frigo. Taglio: 1 cm reale, con la lama inclinata. Cuoci 15 min a 230 °C, apri lo sportello per 5-10 secondi, poi continua a 200-205 °C per 25-30 min, con gli ultimi 10 min a sportello socchiuso. Temperatura al cuore: 96-98 °C.
+7. **Cottura, con o senza pentola di ghisa.** Forno a 230 °C statico. Inforna la pagnotta fredda, direttamente dal frigo. Taglio: 1 cm reale, con la lama inclinata.
+   - **Con la pentola di ghisa:** cuoci 15 min a 230 °C con il coperchio. Poi togli il coperchio, così l'umidità può uscire, e continua a 200-205 °C per 25-30 min.
+   - **Senza pentola, su teglia:** cuoci 15 min a 230 °C, poi apri lo sportello del forno per 5-10 secondi, sempre per far uscire l'umidità, e continua a 200-205 °C per 25-30 min.
+
+   In entrambi i casi, negli ultimi 10 min lascia lo sportello socchiuso. Temperatura al cuore: 96-98 °C.
 
 ## Le tecniche, passo-passo
 
