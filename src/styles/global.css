@@ -230,8 +230,9 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
 /* The subtitle runs up to the right edge of the method text: ingredients column + gap + method width */
 .recipe-head .lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 1.4rem; max-width: calc(23rem + clamp(2rem, 5vw, 4rem) + 38rem); }
 .facts { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); width: fit-content; max-width: 100%; }
-.facts > div { padding: .7rem 1.3rem; border-right: 1px solid var(--line); }
-.facts > div:last-child { border-right: 0; }
+/* Separators are drawn as shadows so the strip still looks right when it wraps onto two rows */
+.facts { overflow: hidden; }
+.facts > div { flex: 1 1 auto; padding: .7rem 1.3rem; box-shadow: -1px 0 0 var(--line), 0 -1px 0 var(--line); }
 .facts dt { font: .66rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .facts dd { margin: .1rem 0 0; font: 700 1.2rem var(--display); letter-spacing: -0.01em; }
 .actions { margin-top: 1.2rem; }
