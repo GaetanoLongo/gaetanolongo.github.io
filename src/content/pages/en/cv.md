@@ -98,19 +98,18 @@ IEC 62477 (safety of power electronic converter systems), IEC 60076 (power trans
 ### Software
 
 <ul class="sw-grid">
-<li><span class="sw-ico" style="--i:url(/sw/ltspice.svg)" aria-hidden="true"></span><span class="sw-name">LTspice</span><span class="sw-lv">advanced</span></li>
-<li><span class="sw-ico mono" aria-hidden="true">Q</span><span class="sw-name">QSpice</span><span class="sw-lv">advanced</span></li>
-<li><span class="sw-ico mono" aria-hidden="true">P</span><span class="sw-name">PLECS</span><span class="sw-lv">advanced</span></li>
-<li><span class="sw-ico mono" aria-hidden="true">M</span><span class="sw-name">MATLAB</span><span class="sw-lv">intermediate</span></li>
-<li><span class="sw-ico mono" aria-hidden="true">S</span><span class="sw-name">Simulink</span><span class="sw-lv">intermediate</span></li>
-<li><span class="sw-ico" style="--i:url(/sw/kicad.svg)" aria-hidden="true"></span><span class="sw-name">KiCad</span><span class="sw-lv">intermediate</span></li>
-<li><span class="sw-ico" style="--i:url(/sw/python.svg)" aria-hidden="true"></span><span class="sw-name">Python</span><span class="sw-lv">basic</span></li>
-<li><span class="sw-ico" style="--i:url(/sw/numpy.svg)" aria-hidden="true"></span><span class="sw-name">NumPy</span><span class="sw-lv">basic</span></li>
-<li><span class="sw-ico" style="--i:url(/sw/anaconda.svg)" aria-hidden="true"></span><span class="sw-name">Conda</span><span class="sw-lv">basic</span></li>
-<li><span class="sw-ico" style="--i:url(/sw/c.svg)" aria-hidden="true"></span><span class="sw-name">C</span><span class="sw-lv">basic</span></li>
+<li><img class="sw-img" src="/sw/ltspice.svg" alt="" loading="lazy" /><span class="sw-name">LTspice</span><span class="sw-lv">advanced</span></li>
+<li><img class="sw-img" src="/sw/qspice.png" alt="" loading="lazy" /><span class="sw-name">QSpice</span><span class="sw-lv">advanced</span></li>
+<li><img class="sw-img" src="/sw/plecs.png" alt="" loading="lazy" /><span class="sw-name">PLECS</span><span class="sw-lv">advanced</span></li>
+<li><img class="sw-img" src="/sw/matlab.png" alt="" loading="lazy" /><span class="sw-name">MATLAB / Simulink</span><span class="sw-lv">intermediate</span></li>
+<li><img class="sw-img" src="/sw/kicad.svg" alt="" loading="lazy" /><span class="sw-name">KiCad</span><span class="sw-lv">intermediate</span></li>
+<li><img class="sw-img" src="/sw/python.svg" alt="" loading="lazy" /><span class="sw-name">Python</span><span class="sw-lv">basic</span></li>
+<li><img class="sw-img" src="/sw/numpy.svg" alt="" loading="lazy" /><span class="sw-name">NumPy</span><span class="sw-lv">basic</span></li>
+<li><img class="sw-img" src="/sw/anaconda.svg" alt="" loading="lazy" /><span class="sw-name">Conda</span><span class="sw-lv">basic</span></li>
+<li><img class="sw-img" src="/sw/c.svg" alt="" loading="lazy" /><span class="sw-name">C</span><span class="sw-lv">basic</span></li>
 <li><span class="sw-ico mono" aria-hidden="true">CAD</span><span class="sw-name">CAD</span><span class="sw-lv">basic</span></li>
-<li><span class="sw-ico" style="--i:url(/sw/linux.svg)" aria-hidden="true"></span><span class="sw-name">Linux</span></li>
-<li><span class="sw-ico mono" aria-hidden="true">W</span><span class="sw-name">Windows</span></li>
+<li><img class="sw-img" src="/sw/linux.svg" alt="" loading="lazy" /><span class="sw-name">Linux</span><span class="sw-lv">intermediate</span></li>
+<li><img class="sw-img" src="/sw/windows.png" alt="" loading="lazy" /><span class="sw-name">Windows</span><span class="sw-lv">expert</span></li>
 </ul>
 
 ## Languages

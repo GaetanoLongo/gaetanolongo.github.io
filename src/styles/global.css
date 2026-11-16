@@ -414,3 +414,10 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
   .prose .cv-logo { float: none; display: block; margin: 1.6rem 0 0; }
 }
 .prose .cv-logo[src*="unibo"] { width: 6.4rem; height: 4.8rem; padding: .4rem; }
+
+.ico { display: inline-block; width: 1.05em; height: 1.05em; margin-right: .55em; vertical-align: -.14em; background: currentColor; -webkit-mask: var(--i) center/contain no-repeat; mask: var(--i) center/contain no-repeat; }
+.elsewhere a { display: flex; align-items: center; }
+.elsewhere .ico { vertical-align: 0; }
+.sw-img { width: 2.4rem; height: 2.4rem; object-fit: contain; margin-bottom: .35rem; }
+/* Dark brand colours (LTspice, KiCad) need a lift on the dark theme */
+:root[data-theme='dark'] .sw-img[src$='ltspice.svg'], :root[data-theme='dark'] .sw-img[src$='kicad.svg'] { filter: brightness(1.9) saturate(1.2); }
