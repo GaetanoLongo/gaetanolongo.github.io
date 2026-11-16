@@ -366,3 +366,5 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
 .calc-how li { margin: .4rem 0; text-align: left; hyphens: manual; }
 @media (max-width: 52rem) { .calc-grid { grid-template-columns: 1fr; } .calc-out { position: static; } }
 @media print { .calc { display: none; } }
+
+.calc .unit-select { font: .75rem var(--mono); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 7px; padding: .3rem .3rem; min-width: 2.6rem; cursor: pointer; }

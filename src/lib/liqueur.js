@@ -41,6 +41,12 @@ function alcoholMasses(ml, strength, contraction) {
   return { mEth, mWater: ml * rhoMix(w) - mEth };
 }
 
+/** Density (g/ml) of the alcohol at `strength` % vol, to convert between weighing and measuring it. */
+export function alcoholDensity(strength, contraction = true) {
+  const { mEth, mWater } = alcoholMasses(1, strength, contraction);
+  return mEth + mWater;
+}
+
 /**
  * Final liqueur for the given amounts.
  * alcoholMl: ml of alcohol, zestG: g of zest, waterMl: ml of water added with the sugar.
