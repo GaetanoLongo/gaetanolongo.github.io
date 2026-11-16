@@ -185,10 +185,10 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
   line-height: 1.7;
 }
 /* Justified text, with hyphenation (uses the page language) to avoid wide gaps.
-   Only on screens wide enough for it; side notes and recipe steps stay left-aligned. */
+   Only on screens wide enough for it; margin notes stay left-aligned. */
 @media (min-width: 40rem) {
-  .prose p, .prose li { text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; }
-  .prose .sn > small, .method .prose p, .method .prose li, .prose blockquote { text-align: left; hyphens: manual; }
+  .prose p, .prose li { text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 7 3 3; }
+  .prose .sn > small { text-align: left; hyphens: manual; }
 }
 .prose > * + * { margin-top: 1.1em; }
 .prose h2 { font-size: 1.9rem; margin-top: 2.4em; }
@@ -225,9 +225,10 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
 }
 
 /* ───────── Recipes ───────── */
-.recipe-head { max-width: 50rem; margin-bottom: 2.2rem; }
+.recipe-head { margin-bottom: 2.2rem; }
 .recipe-head h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); margin: .8rem 0 1rem; }
-.recipe-head .lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 1.4rem; max-width: 40rem; }
+/* The subtitle runs up to the right edge of the method text: ingredients column + gap + method width */
+.recipe-head .lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 1.4rem; max-width: calc(23rem + clamp(2rem, 5vw, 4rem) + 38rem); }
 .facts { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); width: fit-content; max-width: 100%; }
 .facts > div { padding: .7rem 1.3rem; border-right: 1px solid var(--line); }
 .facts > div:last-child { border-right: 0; }
@@ -295,6 +296,7 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
   .main { padding: 0; max-width: none; }
   a { color: #000; text-decoration: none; }
   .recipe-head h1 { font-size: 26pt; }
+  .recipe-head .lead { max-width: none; }
   .recipe-body { grid-template-columns: 8.4cm 1fr; gap: 1cm; }
   .ingredients li { grid-template-columns: 3.6cm 1fr; }
   .ingredients { position: static; border: 0; border-right: 1px solid #999; border-radius: 0; padding: 0 .6cm 0 0; }
