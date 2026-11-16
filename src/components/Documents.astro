@@ -1,14 +1,15 @@
 ---
 import { ui, type Lang } from '../i18n';
-interface Doc { title: string; id: string; type: 'file' | 'folder'; description?: string }
+interface Doc { title: string; id: string; type: 'file' | 'folder'; resourcekey?: string; description?: string }
 interface Props { lang: Lang; documents: Doc[] }
 const { lang, documents } = Astro.props;
 const t = ui[lang].docs;
 
-// Google Drive URL patterns. Only the file/folder ID is stored in the note.
-const view = (d: Doc) => d.type === 'folder' ? `https://drive.google.com/drive/folders/${d.id}` : `https://drive.google.com/file/d/${d.id}/view`;
-const embed = (d: Doc) => d.type === 'folder' ? `https://drive.google.com/embeddedfolderview?id=${d.id}#list` : `https://drive.google.com/file/d/${d.id}/preview`;
-const download = (d: Doc) => `https://drive.google.com/uc?export=download&id=${d.id}`;
+// Google Drive URL patterns. Only the file/folder ID (and its resource key, if any) is stored in the note.
+const rk = (d: Doc, sep: string) => (d.resourcekey ? `${sep}resourcekey=${d.resourcekey}` : '');
+const view = (d: Doc) => d.type === 'folder' ? `https://drive.google.com/drive/folders/${d.id}${rk(d, '?')}` : `https://drive.google.com/file/d/${d.id}/view${rk(d, '?')}`;
+const embed = (d: Doc) => d.type === 'folder' ? `https://drive.google.com/embeddedfolderview?id=${d.id}${rk(d, '&')}#list` : `https://drive.google.com/file/d/${d.id}/preview${rk(d, '?')}`;
+const download = (d: Doc) => `https://drive.google.com/uc?export=download&id=${d.id}${rk(d, '&')}`;
 ---
 <section class="docs" aria-labelledby="docs-title">
   <h2 id="docs-title">{t.title}</h2>

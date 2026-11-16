@@ -25,6 +25,7 @@ export const ui = {
     maturityHelp: 'How finished this note is',
     recipe: { servings: 'Serves', prep: 'Prep', cook: 'Cook', ingredients: 'Ingredients', method: 'Method', print: 'Print recipe' },
     ui: { menu: 'Menu', theme: 'Toggle light / dark', accent: 'Accent colour', language: 'Language', elsewhere: 'Elsewhere' },
+    onlyLang: { label: 'Italian only', text: 'These notes are written in Italian, and so are their files. There is no English version.' },
     docs: {
       title: 'Documents',
       download: 'Download',
@@ -60,6 +61,7 @@ export const ui = {
     maturityHelp: 'Quanto è completa questa nota',
     recipe: { servings: 'Porzioni', prep: 'Preparazione', cook: 'Cottura', ingredients: 'Ingredienti', method: 'Procedimento', print: 'Stampa la ricetta' },
     ui: { menu: 'Menu', theme: 'Cambia tema chiaro / scuro', accent: 'Colore d’accento', language: 'Lingua', elsewhere: 'Altrove' },
+    onlyLang: { label: 'Solo italiano', text: 'Questi appunti sono scritti in italiano.' },
     docs: {
       title: 'Documenti',
       download: 'Scarica',

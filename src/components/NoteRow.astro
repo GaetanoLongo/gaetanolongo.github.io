@@ -2,14 +2,15 @@
 import { ui, type Lang } from '../i18n';
 import { fmtDate } from '../lib/content';
 import Maturity from './Maturity.astro';
-interface Props { lang: Lang; slug: string; title: string; description: string; date: Date; maturity: 'seedling' | 'growing' | 'evergreen' }
-const { lang, slug, title, description, date, maturity } = Astro.props;
+interface Props { lang: Lang; slug: string; title: string; description: string; date: Date; maturity: 'seedling' | 'growing' | 'evergreen'; contentLang?: string }
+const { lang, slug, title, description, date, maturity, contentLang } = Astro.props;
 ---
 <li class="row">
   <time class="meta" datetime={date.toISOString()}>{fmtDate(date, ui[lang].locale)}</time>
   <div>
     <h3><a href={`/${lang}/notes/${slug}/`}>{title}</a></h3>
     <p>{description}</p>
+    {contentLang && contentLang !== lang && <span class="chip chip-accent">{ui[lang].onlyLang.label}</span>}
   </div>
   <Maturity lang={lang} level={maturity} />
 </li>

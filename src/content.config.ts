@@ -15,6 +15,7 @@ const notes = defineCollection({
     tags: z.array(z.string()).default([]),
     // Files hosted on Google Drive, shown as a click-to-load preview with a download button.
     // `id` is the part of the Drive URL after /d/ (file) or /folders/ (folder).
+    contentLang: z.enum(['it', 'en']).optional(), // language the note's text and files are written in
     filesSoon: z.boolean().default(false), // show "files not online yet" when there are no documents
     documents: z
       .array(
@@ -22,6 +23,7 @@ const notes = defineCollection({
           title: z.string(),
           id: z.string(),
           type: z.enum(['file', 'folder']).default('file'),
+          resourcekey: z.string().optional(), // from the Drive link (?resourcekey=…), needed for older files/folders
           description: z.string().optional(),
         }),
       )

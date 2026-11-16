@@ -4,6 +4,7 @@ description: "Course notes (in Italian) from Prof. Pasini's course at UniBO, han
 date: 2018-02-18
 maturity: evergreen
 tags: ["UniBO", "Electrical engineering", "Measurements"]
+contentLang: "it"
 documents:
   - title: "Electrical measurements notes"
     id: "1qaaeQ2MfFMtJuIFrUu8nFDAaIgKnzVgb"

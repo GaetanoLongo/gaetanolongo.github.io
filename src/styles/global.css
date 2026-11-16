@@ -321,3 +321,8 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
 .doc-frame iframe { width: 100%; height: min(80vh, 46rem); min-height: 22rem; border: 1px solid var(--line); border-radius: 6px; background: var(--code-bg); }
 .docs-soon { color: var(--muted); }
 @media print { .docs { display: none; } }
+
+/* "Italian only" notice */
+.chip-accent { margin-top: .5rem; display: inline-block; color: var(--accent); border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
+.lang-note { max-width: 48rem; margin: 0 0 2.2rem; padding: .85rem 1.1rem; border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; background: color-mix(in srgb, var(--accent) 9%, transparent); font-size: 1rem; }
+.lang-note strong { font: 600 .72rem var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--accent); margin-right: .6rem; }

@@ -4,6 +4,7 @@ description: "Notes and a question list (in Italian) from Prof. Munari's course 
 date: 2018-02-18
 maturity: evergreen
 tags: ["UniBO", "Engineering", "Project management"]
+contentLang: "it"
 documents:
   - title: "Notes"
     id: "1F8fG1sq8DUmqOFp8RnLb3vt2D0PCwdli"

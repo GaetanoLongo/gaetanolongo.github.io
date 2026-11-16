@@ -4,6 +4,7 @@ description: "Notes (in Italian) from Prof. Pasini's course at UniBO, academic y
 date: 2018-02-15
 maturity: evergreen
 tags: ["UniBO", "Electrical engineering", "Sensors"]
+contentLang: "it"
 filesSoon: true
 ---
 

@@ -34,6 +34,9 @@ const switchHref = (await hasTranslation('notes', lang, slug))
         {d.tags.length > 0 && <span class="chips">{d.tags.map((x) => <span class="chip">{x}</span>)}</span>}
       </div>
     </header>
+    {d.contentLang && d.contentLang !== lang && (
+      <p class="lang-note"><strong>{t.onlyLang.label}</strong> {t.onlyLang.text}</p>
+    )}
     <div class="prose"><Content /></div>
     {(d.documents.length > 0 || d.filesSoon) && <Documents lang={lang} documents={d.documents} />}
   </article>
