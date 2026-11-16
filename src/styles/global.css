@@ -335,3 +335,34 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
 
 .versions-title { font-size: 1.5rem; margin: 2.2rem 0 1rem; }
 .cards.versions { max-width: 50rem; }
+
+/* ───────── Liqueur calculator ───────── */
+.calc { max-width: 56rem; margin-top: 3.5rem; padding-top: 1.3rem; border-top: 1px solid var(--line); }
+.calc > h2 { font-size: 1.9rem; margin-bottom: .8rem; }
+.calc-intro { max-width: 46rem; color: var(--muted); margin: 0 0 1.6rem; }
+.calc-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.4rem; align-items: start; }
+.calc fieldset { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 1rem 1.2rem 1.1rem; margin: 0 0 1rem; }
+.calc legend { font: 600 .72rem var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 0 .4rem; }
+.calc label { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .8rem; padding: .35rem 0; font-weight: 500; }
+.calc .field { display: inline-flex; align-items: center; gap: .4rem; }
+.calc input[type='number'] { width: 7rem; padding: .4rem .55rem; font: 600 1rem var(--mono); text-align: right; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 7px; }
+.calc input[type='number']:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.calc .u { font: .75rem var(--mono); color: var(--muted); min-width: 2.6rem; }
+.calc .range { width: 100%; accent-color: var(--accent); margin: .3rem 0 .6rem; }
+.calc .note { margin: .5rem 0 0; font-size: .88rem; line-height: 1.45; color: var(--muted); text-align: left; hyphens: manual; }
+.calc-adv { border: 1px dashed var(--line); border-radius: var(--radius); padding: .6rem 1.2rem .8rem; }
+.calc-adv summary, .calc-how summary { cursor: pointer; font: 600 .78rem var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); }
+.calc-out { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.3rem 1.2rem; position: sticky; top: 1.5rem; }
+.calc-out h3 { font-size: 1.3rem; margin-bottom: .6rem; }
+.calc-out dl { margin: 0; }
+.calc-out dl > div { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; border-top: 1px dashed var(--line); }
+.calc-out dl > div:first-child { border-top: 0; }
+.calc-out dt { color: var(--muted); }
+.calc-out dd { margin: 0; font: 600 .95rem var(--mono); text-align: right; }
+.calc-out .big dd { font-size: 1.15rem; color: var(--accent); }
+#c-msg:not(:empty) { color: var(--accent); font-weight: 600; }
+.calc-how { margin-top: 1rem; }
+.calc-how ul { margin: .8rem 0 0; padding-left: 1.2rem; max-width: 46rem; color: var(--muted); font-size: .95rem; }
+.calc-how li { margin: .4rem 0; text-align: left; hyphens: manual; }
+@media (max-width: 52rem) { .calc-grid { grid-template-columns: 1fr; } .calc-out { position: static; } }
+@media print { .calc { display: none; } }

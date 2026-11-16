@@ -1,0 +1,207 @@
+---
+// Calculator for citrus-peel liqueurs. The maths lives in src/lib/liqueur.js.
+import type { Lang } from '../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+
+const T = {
+  it: {
+    title: 'Calcolatore',
+    intro: "Parti dalla quantità di alcol o da quella di scorza: il calcolatore ricava il resto. Poi scegli la gradazione finale e ti dice quanta acqua serve, oppure cambia l'acqua e vedi la gradazione. I valori predefiniti sono quelli di Bressanini per il limone, ma vanno bene anche per i «cugini» (arancello, mandarinetto, …) con scorze simili.",
+    g1: 'Quanto ne vuoi fare',
+    alcohol: 'Alcol', zest: 'Scorza',
+    link: 'Le due quantità sono legate: modificandone una, cambia l’altra.',
+    g2: 'Gradazione e acqua',
+    abv: 'Gradazione finale', water: 'Acqua',
+    link2: 'Cambia la gradazione per ricavare l’acqua, oppure l’acqua per ricavare la gradazione.',
+    adv: 'Impostazioni (valori di Bressanini)',
+    strength: 'Gradazione dell’alcol', zestPer: 'Scorza ogni 100 ml di alcol', peel: 'Acqua nella scorza', sugar: 'Zucchero ogni 100 g di acqua',
+    out: 'Risultato',
+    rAlcohol: 'Alcol', rZest: 'Scorza (solo la parte gialla)', rWater: 'Acqua', rSugar: 'Zucchero', rVolume: 'Volume finale', rAbv: 'Gradazione finale', rSweet: 'Zucchero nel liquore',
+    perWeight: 'del peso',
+    hint: 'Per confronto, i limoncelli in commercio hanno 25–37% vol di alcol (in media circa 30%) e 18–29% di zucchero.',
+    howT: 'Come funziona il calcolo',
+    how: [
+      "L'acqua contenuta nella scorza (circa il 70%) si mescola all'alcol. Il liquido rimasto dentro le scorze viene buttato con loro, quindi dell'alcol di partenza se ne recupera solo una parte (con i valori di Bressanini, 78 ml su 95).",
+      "Si aggiungono acqua e zucchero. Lo zucchero sciolto occupa volume (circa 0,63 ml per grammo).",
+      "Il volume della miscela di alcol e acqua usa le densità reali: mescolandosi, i due si contraggono leggermente.",
+      "La gradazione è l'alcol puro diviso il volume finale a 20 °C. È una stima: l'alcolometro non funziona in un liquore zuccherato.",
+      "Nell'appendice dell'articolo Bressanini calcola circa 39% vol senza contare il volume dello zucchero. Con 80 g di zucchero ogni 100 ml di acqua il volume finale cresce di circa un quarto e la stima scende a circa 32%.",
+    ],
+    tooHigh: 'Con questa quantità di alcol e di scorza non si può arrivare a una gradazione così alta: ho messo 0 ml di acqua.',
+    invalid: 'Inserisci un valore maggiore di zero.',
+  },
+  en: {
+    title: 'Calculator',
+    intro: 'Start from the amount of alcohol or of zest and the calculator works out the other. Then pick the final strength and it tells you how much water is needed, or change the water and see the strength. The defaults are Bressanini’s values for lemon, but they also suit the “cousins” (arancello, mandarinetto, …) made with similar peels.',
+    g1: 'How much do you want to make',
+    alcohol: 'Alcohol', zest: 'Zest',
+    link: 'The two amounts are linked: change one and the other follows.',
+    g2: 'Strength and water',
+    abv: 'Final strength', water: 'Water',
+    link2: 'Change the strength to get the water, or the water to get the strength.',
+    adv: 'Settings (Bressanini’s values)',
+    strength: 'Alcohol strength', zestPer: 'Zest per 100 ml of alcohol', peel: 'Water in the peel', sugar: 'Sugar per 100 g of water',
+    out: 'Result',
+    rAlcohol: 'Alcohol', rZest: 'Zest (yellow part only)', rWater: 'Water', rSugar: 'Sugar', rVolume: 'Final volume', rAbv: 'Final strength', rSweet: 'Sugar in the liqueur',
+    perWeight: 'by weight',
+    hint: 'For comparison, commercial limoncello has 25–37% vol alcohol (about 30% on average) and 18–29% sugar.',
+    howT: 'How the calculation works',
+    how: [
+      'The water in the zest (about 70%) mixes with the alcohol. The liquid left inside the peels is thrown away with them, so only part of the starting alcohol is recovered (with Bressanini’s values, 78 ml out of 95).',
+      'Water and sugar are added. Dissolved sugar takes up volume (about 0.63 ml per gram).',
+      'The volume of the alcohol and water mix uses real densities: when mixed, the two shrink slightly.',
+      'The strength is pure alcohol divided by the final volume at 20 °C. It is an estimate: a hydrometer does not work in a sugary liqueur.',
+      'In the appendix of his article Bressanini calculates about 39% vol without counting the volume of the sugar. With 80 g of sugar per 100 ml of water the final volume grows by about a quarter and the estimate drops to about 32%.',
+    ],
+    tooHigh: 'This amount of alcohol and zest cannot reach such a high strength: I set the water to 0 ml.',
+    invalid: 'Enter a value greater than zero.',
+  },
+}[lang];
+---
+<section class="calc" id="calculator" data-lang={lang} aria-labelledby="calc-title"
+  data-tohigh={T.tooHigh} data-invalid={T.invalid}>
+  <h2 id="calc-title">{T.title}</h2>
+  <p class="calc-intro">{T.intro}</p>
+
+  <div class="calc-grid">
+    <div class="calc-in">
+      <fieldset>
+        <legend>1 · {T.g1}</legend>
+        <label>{T.alcohol}<span class="field"><input id="c-alc" type="number" inputmode="decimal" min="0" step="10" value="500" /><span class="u">ml</span></span></label>
+        <label>{T.zest}<span class="field"><input id="c-zest" type="number" inputmode="decimal" min="0" step="5" value="150" /><span class="u">g</span></span></label>
+        <p class="note">{T.link}</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>2 · {T.g2}</legend>
+        <label>{T.abv}<span class="field"><input id="c-abv" type="number" inputmode="decimal" min="1" max="60" step="0.5" /><span class="u">% vol</span></span></label>
+        <input id="c-abv-r" class="range" type="range" min="15" max="45" step="0.5" aria-label={T.abv} />
+        <label>{T.water}<span class="field"><input id="c-water" type="number" inputmode="decimal" min="0" step="10" value="500" /><span class="u">ml</span></span></label>
+        <p class="note">{T.link2}</p>
+      </fieldset>
+
+      <details class="calc-adv">
+        <summary>{T.adv}</summary>
+        <label>{T.strength}<span class="field"><input id="c-strength" type="number" min="40" max="100" step="1" value="95" /><span class="u">% vol</span></span></label>
+        <label>{T.zestPer}<span class="field"><input id="c-zper" type="number" min="1" step="1" value="30" /><span class="u">g</span></span></label>
+        <label>{T.peel}<span class="field"><input id="c-peel" type="number" min="0" max="95" step="1" value="70" /><span class="u">%</span></span></label>
+        <label>{T.sugar}<span class="field"><input id="c-sugar" type="number" min="0" step="5" value="80" /><span class="u">g</span></span></label>
+      </details>
+    </div>
+
+    <div class="calc-out" aria-live="polite">
+      <h3>{T.out}</h3>
+      <dl>
+        <div><dt>{T.rAlcohol}</dt><dd id="o-alc">—</dd></div>
+        <div><dt>{T.rZest}</dt><dd id="o-zest">—</dd></div>
+        <div><dt>{T.rWater}</dt><dd id="o-water">—</dd></div>
+        <div><dt>{T.rSugar}</dt><dd id="o-sugar">—</dd></div>
+        <div class="big"><dt>{T.rVolume}</dt><dd id="o-vol">—</dd></div>
+        <div class="big"><dt>{T.rAbv}</dt><dd id="o-abv">—</dd></div>
+        <div><dt>{T.rSweet}</dt><dd id="o-sweet">—</dd></div>
+      </dl>
+      <p class="note" id="c-msg" role="status"></p>
+      <p class="note">{T.hint}</p>
+    </div>
+  </div>
+
+  <details class="calc-how">
+    <summary>{T.howT}</summary>
+    <ul>{T.how.map((x) => <li>{x}</li>)}</ul>
+  </details>
+</section>
+
+<script>
+  import { liqueur, waterFor, DEFAULTS } from '../lib/liqueur.js';
+
+  const root = document.getElementById('calculator')!;
+  const en = root.dataset.lang === 'en';
+  const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+  const out = (id: string) => document.getElementById(id)!;
+  const num = (el: HTMLInputElement) => { const v = parseFloat(el.value.replace(',', '.')); return Number.isFinite(v) ? v : NaN; };
+  const put = (el: HTMLInputElement, v: number, d = 0) => { el.value = String(+v.toFixed(d)); };
+
+  // Imperial values in brackets on the English page.
+  const fl = (ml: number) => `${Math.round(ml)} ml` + (en ? ` (${(ml / 29.5735).toFixed(1)} fl oz)` : '');
+  const gr = (g: number) => `${Math.round(g)} g` + (en ? ` (${(g / 28.3495).toFixed(1)} oz)` : '');
+  const vol = (ml: number) => (ml >= 1000 ? `${(ml / 1000).toFixed(2)} L` : `${Math.round(ml)} ml`) + (en ? ` (${(ml / 29.5735).toFixed(0)} fl oz)` : '');
+
+  const f = {
+    alc: $('c-alc'), zest: $('c-zest'), abv: $('c-abv'), range: $('c-abv-r'), water: $('c-water'),
+    strength: $('c-strength'), zper: $('c-zper'), peel: $('c-peel'), sugar: $('c-sugar'),
+  };
+  const msg = out('c-msg');
+
+  // The field edited last (strength or water) is the "driver": the other one is derived from it.
+  let drive: 'abv' | 'water' = 'water';
+  let prevAlc = num(f.alc);
+
+  const opts = () => ({
+    strength: num(f.strength) || DEFAULTS.strength,
+    zestPer100: num(f.zper) || DEFAULTS.zestPer100,
+    peelWaterPct: Number.isFinite(num(f.peel)) ? num(f.peel) : DEFAULTS.peelWaterPct,
+    sugarPct: Number.isFinite(num(f.sugar)) ? num(f.sugar) : DEFAULTS.sugarPct,
+  });
+  const ratio = () => opts().zestPer100 / 100;
+
+  function update() {
+    msg.textContent = '';
+    const alc = num(f.alc), zest = num(f.zest);
+    if (!(alc > 0) || !(zest >= 0)) { msg.textContent = root.dataset.invalid!; return; }
+    const o = opts();
+
+    let water: number;
+    let tooHigh = false;
+    if (drive === 'abv') {
+      const target = num(f.abv);
+      if (!(target > 0)) { msg.textContent = root.dataset.invalid!; return; }
+      const r = waterFor(target, { alcoholMl: alc, zestG: zest }, o)!;
+      water = r.waterMl;
+      tooHigh = r.tooHigh;
+      put(f.water, water);
+    } else {
+      water = num(f.water);
+      if (!(water >= 0)) { msg.textContent = root.dataset.invalid!; return; }
+    }
+
+    const r = liqueur({ alcoholMl: alc, zestG: zest, waterMl: water }, o);
+    out('o-alc').textContent = `${fl(alc)} · ${o.strength}% vol`;
+    out('o-zest').textContent = gr(zest);
+    out('o-water').textContent = fl(water);
+    out('o-sugar').textContent = gr(r.sugarG);
+    out('o-vol').textContent = vol(r.finalMl);
+    out('o-abv').textContent = `${r.abv.toFixed(1)}% vol`;
+    out('o-sweet').textContent = `${r.sugarPctW.toFixed(0)}% ${en ? 'by weight' : 'del peso'}`;
+
+    // Never rewrite the field the person is typing in.
+    if (drive === 'water' || tooHigh) put(f.abv, r.abv, 1);
+    f.range.value = String(Math.min(45, Math.max(15, r.abv)));
+    if (tooHigh) msg.textContent = root.dataset.tohigh!;
+  }
+
+  // Alcohol and zest are linked by the zest-per-100-ml ratio. Changing the amount scales the water too,
+  // so the strength stays the same.
+  function rescaleWater(newAlc: number) {
+    const w = num(f.water);
+    if (drive === 'water' && prevAlc > 0 && w >= 0) put(f.water, (w / prevAlc) * newAlc);
+    prevAlc = newAlc;
+  }
+  f.alc.addEventListener('input', () => {
+    const a = num(f.alc);
+    if (a > 0) { put(f.zest, a * ratio()); rescaleWater(a); }
+    update();
+  });
+  f.zest.addEventListener('input', () => {
+    const z = num(f.zest);
+    if (z >= 0) { const a = z / ratio(); put(f.alc, a); rescaleWater(a); }
+    update();
+  });
+  f.abv.addEventListener('input', () => { drive = 'abv'; update(); });
+  f.range.addEventListener('input', () => { drive = 'abv'; f.abv.value = f.range.value; update(); });
+  f.water.addEventListener('input', () => { drive = 'water'; update(); });
+  f.zper.addEventListener('input', () => { const a = num(f.alc); if (a > 0) put(f.zest, a * ratio()); update(); });
+  for (const k of ['strength', 'peel', 'sugar'] as const) f[k].addEventListener('input', update);
+
+  update();
+</script>

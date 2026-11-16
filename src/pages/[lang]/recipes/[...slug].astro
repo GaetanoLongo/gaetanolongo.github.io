@@ -3,6 +3,7 @@ import Base from '../../../layouts/Base.astro';
 import { ui, other, type Lang } from '../../../i18n';
 import { getCollection, splitId, hasTranslation } from '../../../lib/content';
 import { render, getEntry } from 'astro:content';
+import LiqueurCalculator from '../../../components/LiqueurCalculator.astro';
 
 export async function getStaticPaths() {
   return (await getCollection('recipes')).map((entry) => {
@@ -40,7 +41,7 @@ const parent = d.partOf ? await getEntry('recipes', `${lang}/${d.partOf}`) : und
         </dl>
       )}
       {d.source && (
-        <p class="recipe-source">{r.source}: {/^https?:\/\//.test(d.source) ? <a href={d.source} rel="noopener">{d.source}</a> : d.source}</p>
+        <p class="recipe-source">{r.source}: {d.sourceUrl ? <a href={d.sourceUrl} rel="noopener">{d.source}</a> : /^https?:\/\//.test(d.source) ? <a href={d.source} rel="noopener">{d.source}</a> : d.source}</p>
       )}
       {!isHub && <div class="actions"><button class="btn" type="button" data-print>{r.print}</button></div>}
     </header>
@@ -71,6 +72,7 @@ const parent = d.partOf ? await getEntry('recipes', `${lang}/${d.partOf}`) : und
       </section>
     </div>
     )}
+    {d.calculator === 'liqueur' && <LiqueurCalculator lang={lang} />}
     <p class="print-url">{url}</p>
   </article>
 </Base>

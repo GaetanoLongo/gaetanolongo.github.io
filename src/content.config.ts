@@ -54,6 +54,8 @@ const recipes = defineCollection({
     cook: z.string().optional(),
     oven: z.string().optional(), // e.g. "180 °C"; leave out when unknown
     source: z.string().optional(), // credit line, shown only when present
+    sourceUrl: z.string().url().optional(), // makes the credit line a link
+    calculator: z.enum(['liqueur']).optional(), // shows the liqueur calculator under the recipe
     tags: z.array(z.string()).default([]),
     ingredients: z.array(z.object({ q: z.string(), i: z.string() })).default([]),
     // A recipe that is only a page linking several versions of the same dish.

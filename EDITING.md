@@ -97,6 +97,8 @@ prep: "30 min"
 cook: "45 min"
 oven: "180 °C"          # optional (English: "180 °C (355 °F)")
 source: "Name of the author or site"   # optional, leave out if none
+sourceUrl: "https://…"      # optional: makes the source line a link
+calculator: "liqueur"   # optional: shows the liqueur calculator under the recipe
 tags: ["bread"]
 ingredients:
   - { q: "500 g", i: "Flour" }
