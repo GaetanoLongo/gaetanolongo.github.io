@@ -31,10 +31,10 @@ Totali, licoli compreso: farina 1250 g (semola 940 g + farina 0 310 g), acqua
 5. **Formatura definitiva, anti mega alveoli.** Forma la pagnotta: stendi leggermente, schiaccia il centro, chiudi bene i lembi, con tensione progressiva, non violenta. Obiettivo: pelle uniforme, aria solo diffusa, niente sacche.
 6. **Seconda lievitazione in frigo.** Cestino infarinato, coperto bene, a 4-8 °C per 8-12 ore. In frigo i lieviti rallentano, i gas si uniformano e non si formano bolle giganti.
 7. **Cottura, con o senza pentola di ghisa.** Forno a 230 °C statico. Inforna la pagnotta fredda, direttamente dal frigo. Taglio: 1 cm reale, con la lama inclinata.
-   - **Con la pentola di ghisa:** cuoci 15 min a 230 °C con il coperchio. Poi togli il coperchio, così l'umidità può uscire, e continua a 200-205 °C per 25-30 min.
-   - **Senza pentola, su teglia:** cuoci 15 min a 230 °C, poi apri lo sportello del forno per 5-10 secondi, sempre per far uscire l'umidità, e continua a 200-205 °C per 25-30 min.
+   - **Con la pentola di ghisa:** la pentola, con il coperchio, deve essere preriscaldata: mettila nel forno mentre sale a 230 °C. Inforna la pagnotta nella pentola calda e cuoci 15 min a 230 °C con il coperchio. Poi togli il coperchio, così l'umidità può uscire, e continua senza coperchio a 200-205 °C per 25-30 min.
+   - **Senza pentola, su teglia:** cuoci 15 min a 230 °C, poi apri lo sportello del forno per circa 10 secondi, solo per far uscire l'umidità. Abbassa la temperatura a 200-205 °C, richiudi lo sportello e continua per 25-30 min, con gli ultimi 10 min a sportello socchiuso.
 
-   In entrambi i casi, negli ultimi 10 min lascia lo sportello socchiuso. Temperatura al cuore: 96-98 °C.
+   Temperatura al cuore: 96-98 °C.
 
 ## Le tecniche, passo-passo
 

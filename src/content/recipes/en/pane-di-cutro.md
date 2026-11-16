@@ -31,10 +31,10 @@ Totals, licoli included: flour 1250 g (2.8 lb): 940 g semolina + 310 g (11 
 5. **Final shaping, anti huge holes.** Shape the loaf: flatten slightly, press the centre, close the flaps well, with progressive, not violent tension. Goal: an even skin, air only spread out, no pockets.
 6. **Second rise in the fridge.** Floured banneton, well covered, at 4-8 °C (39-46 °F) for 8-12 hours. In the fridge the yeasts slow down, the gases even out and no giant bubbles form.
 7. **Baking, with or without a Dutch oven (cast-iron pot).** Conventional oven (no fan) at 230 °C (445 °F). Bake the loaf cold, straight from the fridge. Slash: a real 1 cm (⅜ in) deep, with the blade at an angle.
-   - **With a Dutch oven:** bake 15 min at 230 °C (445 °F) with the lid on. Then take the lid off, so the moisture can escape, and continue at 200-205 °C (390-400 °F) for 25-30 min.
-   - **Without a Dutch oven, on a baking tray:** bake 15 min at 230 °C (445 °F), then open the oven door for 5-10 seconds, again to let the moisture escape, and continue at 200-205 °C (390-400 °F) for 25-30 min.
+   - **With a Dutch oven:** the pot, with its lid on, must be preheated: put it in the oven while it heats up to 230 °C (445 °F). Put the loaf into the hot pot and bake 15 min at 230 °C (445 °F) with the lid on. Then take the lid off, so the moisture can escape, and continue with the lid off at 200-205 °C (390-400 °F) for 25-30 min.
+   - **Without a Dutch oven, on a baking tray:** bake 15 min at 230 °C (445 °F), then open the oven door for about 10 seconds, only to let the moisture escape. Lower the temperature to 200-205 °C (390-400 °F), close the door and continue for 25-30 min, keeping the door ajar for the last 10 min.
 
-   In both cases, keep the door ajar for the last 10 min. Core temperature: 96-98 °C (205-208 °F).
+   Core temperature: 96-98 °C (205-208 °F).
 
 ## The techniques, step by step
 
