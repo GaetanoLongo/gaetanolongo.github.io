@@ -16,6 +16,9 @@ edit them in the browser on github.com.
 
 ## Two rules that avoid most problems
 
+- **Always change both languages.** When you add, edit, rename or delete a note, recipe or project,
+  do it in `en/` **and** `it/` (same file name), or the two versions drift apart.
+
 - Every page starts with a block between two `---` lines (called *front matter*). Keep the
   quotes `"like this"` around titles and descriptions, and write dates as `2026-11-30`.
 - English and Italian are separate files with **the same file name** in `en/` and `it/`.
