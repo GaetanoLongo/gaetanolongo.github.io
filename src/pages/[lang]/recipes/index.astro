@@ -7,7 +7,7 @@ import { getCollection, inLang } from '../../../lib/content';
 export const getStaticPaths = () => languages.map((lang) => ({ params: { lang } }));
 const lang = Astro.params.lang as Lang;
 const s = ui[lang].sections.recipes;
-const items = inLang(await getCollection('recipes'), lang).sort((a, b) => +b.entry.data.date - +a.entry.data.date);
+const items = inLang(await getCollection('recipes'), lang).filter((x) => !x.entry.data.partOf).sort((a, b) => +b.entry.data.date - +a.entry.data.date);
 ---
 <Base lang={lang} title={s.title} description={s.lead} active="recipes">
   <div class="page-head"><h1>{s.title}</h1><p>{s.lead}</p></div>

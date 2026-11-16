@@ -1,8 +1,8 @@
 ---
 import { ui, type Lang } from '../i18n';
-interface Props { lang: Lang; slug: string; title: string; description: string; prep?: string; cook?: string; tags?: string[] }
-const { lang, slug, title, description, prep, cook, tags = [] } = Astro.props;
-const total = [prep, cook].filter(Boolean).join(' + ');
+interface Props { lang: Lang; slug: string; title: string; description: string; prep?: string; cook?: string; tags?: string[]; versions?: { slug: string }[] }
+const { lang, slug, title, description, prep, cook, tags = [], versions } = Astro.props;
+const total = versions?.length ? `${versions.length} ${ui[lang].recipe.versions.toLowerCase()}` : [prep, cook].filter(Boolean).join(' + ');
 ---
 <article class="card">
   <div class="top"><span class="meta">{total}</span></div>

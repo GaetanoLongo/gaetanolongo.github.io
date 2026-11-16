@@ -13,7 +13,7 @@ const t = ui[lang];
 
 const projects = inLang(await getCollection('projects'), lang).sort((a, b) => a.entry.data.order - b.entry.data.order);
 const notes = inLang(await getCollection('notes'), lang).sort((a, b) => +b.entry.data.date - +a.entry.data.date).slice(0, 3);
-const recipes = inLang(await getCollection('recipes'), lang).sort((a, b) => +b.entry.data.date - +a.entry.data.date).slice(0, 3);
+const recipes = inLang(await getCollection('recipes'), lang).filter((x) => !x.entry.data.partOf).sort((a, b) => +b.entry.data.date - +a.entry.data.date).slice(0, 3);
 ---
 <Base lang={lang} title={t.greeting} active="home">
   <section class="hero">

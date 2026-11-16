@@ -2,7 +2,7 @@
 import Base from '../../../layouts/Base.astro';
 import { ui, other, type Lang } from '../../../i18n';
 import { getCollection, splitId, hasTranslation } from '../../../lib/content';
-import { render } from 'astro:content';
+import { render, getEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   return (await getCollection('recipes')).map((entry) => {
@@ -20,11 +20,15 @@ const d = entry.data;
 const switchHref = (await hasTranslation('recipes', lang, slug))
   ? `/${other(lang)}/recipes/${slug}/` : `/${other(lang)}/recipes/`;
 const url = new URL(Astro.url.pathname, Astro.site).href;
+const isHub = (d.versions?.length ?? 0) > 0;
+const parent = d.partOf ? await getEntry('recipes', `${lang}/${d.partOf}`) : undefined;
 ---
 <Base lang={lang} title={d.title} description={d.description} active="recipes" switchHref={switchHref}>
   <article>
     <header class="recipe-head">
-      <a class="meta" href={`/${lang}/recipes/`}>← {t.sections.recipes.title}</a>
+      {parent
+        ? <a class="meta" href={`/${lang}/recipes/${d.partOf}/`}>← {parent.data.title}</a>
+        : <a class="meta" href={`/${lang}/recipes/`}>← {t.sections.recipes.title}</a>}
       <h1>{d.title}</h1>
       <p class="lead">{d.description}</p>
       {(d.servings || d.prep || d.cook || d.oven) && (
@@ -38,9 +42,24 @@ const url = new URL(Astro.url.pathname, Astro.site).href;
       {d.source && (
         <p class="recipe-source">{r.source}: {/^https?:\/\//.test(d.source) ? <a href={d.source} rel="noopener">{d.source}</a> : d.source}</p>
       )}
-      <div class="actions"><button class="btn" type="button" data-print>{r.print}</button></div>
+      {!isHub && <div class="actions"><button class="btn" type="button" data-print>{r.print}</button></div>}
     </header>
 
+    {isHub ? (
+      <>
+        <div class="prose"><Content /></div>
+        <h2 class="versions-title">{r.versions}</h2>
+        <div class="cards versions">
+          {d.versions!.map((v) => (
+            <article class="card">
+              <h3>{v.title}</h3>
+              {v.description && <p>{v.description}</p>}
+              <a class="stretch" href={`/${lang}/recipes/${v.slug}/`} aria-label={v.title}></a>
+            </article>
+          ))}
+        </div>
+      </>
+    ) : (
     <div class="recipe-body">
       <aside class="ingredients">
         <h2>{r.ingredients}</h2>
@@ -51,6 +70,7 @@ const url = new URL(Astro.url.pathname, Astro.site).href;
         <div class="prose"><Content /></div>
       </section>
     </div>
+    )}
     <p class="print-url">{url}</p>
   </article>
 </Base>

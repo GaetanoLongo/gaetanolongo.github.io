@@ -55,7 +55,11 @@ const recipes = defineCollection({
     oven: z.string().optional(), // e.g. "180 °C"; leave out when unknown
     source: z.string().optional(), // credit line, shown only when present
     tags: z.array(z.string()).default([]),
-    ingredients: z.array(z.object({ q: z.string(), i: z.string() })),
+    ingredients: z.array(z.object({ q: z.string(), i: z.string() })).default([]),
+    // A recipe that is only a page linking several versions of the same dish.
+    versions: z.array(z.object({ slug: z.string(), title: z.string(), description: z.string().optional() })).optional(),
+    // On a version page: the slug of the page that groups the versions.
+    partOf: z.string().optional(),
   }),
 });
 
