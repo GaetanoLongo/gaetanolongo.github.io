@@ -151,6 +151,23 @@ const nav = [
         } catch {}
       });
 
+      // Document previews load from Google Drive only when asked for.
+      document.querySelectorAll<HTMLButtonElement>('[data-doc-toggle]').forEach((b) =>
+        b.addEventListener('click', () => {
+          const box = document.getElementById(b.dataset.docToggle!)!;
+          const opening = box.hidden;
+          if (opening && !box.querySelector('iframe')) {
+            const f = document.createElement('iframe');
+            f.src = box.dataset.src!;
+            f.loading = 'lazy';
+            f.title = b.closest('.doc')?.querySelector('h3')?.textContent ?? 'Document';
+            box.appendChild(f);
+          }
+          box.hidden = !opening;
+          b.textContent = opening ? b.dataset.hide! : b.dataset.show!;
+          b.setAttribute('aria-expanded', String(opening));
+        }));
+
       document.querySelectorAll<HTMLButtonElement>('[data-print]').forEach((b) =>
         b.addEventListener('click', () => window.print()));
     </script>

@@ -2,6 +2,7 @@
 import 'katex/dist/katex.min.css';
 import Base from '../../../layouts/Base.astro';
 import Maturity from '../../../components/Maturity.astro';
+import Documents from '../../../components/Documents.astro';
 import { ui, other, type Lang } from '../../../i18n';
 import { getCollection, splitId, hasTranslation, fmtDate } from '../../../lib/content';
 import { render } from 'astro:content';
@@ -34,5 +35,6 @@ const switchHref = (await hasTranslation('notes', lang, slug))
       </div>
     </header>
     <div class="prose"><Content /></div>
+    {(d.documents.length > 0 || d.filesSoon) && <Documents lang={lang} documents={d.documents} />}
   </article>
 </Base>

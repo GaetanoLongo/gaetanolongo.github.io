@@ -8,6 +8,8 @@ npm run dev      # http://localhost:4321
 npm run build
 ```
 
+**New to this? Read [EDITING.md](EDITING.md)** for editing everything from the GitHub web interface.
+
 ## Writing content
 
 Everything lives in `src/content/<collection>/<en|it>/<slug>.md`. Use the same slug in both

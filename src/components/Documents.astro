@@ -1,0 +1,37 @@
+---
+import { ui, type Lang } from '../i18n';
+interface Doc { title: string; id: string; type: 'file' | 'folder'; description?: string }
+interface Props { lang: Lang; documents: Doc[] }
+const { lang, documents } = Astro.props;
+const t = ui[lang].docs;
+
+// Google Drive URL patterns. Only the file/folder ID is stored in the note.
+const view = (d: Doc) => d.type === 'folder' ? `https://drive.google.com/drive/folders/${d.id}` : `https://drive.google.com/file/d/${d.id}/view`;
+const embed = (d: Doc) => d.type === 'folder' ? `https://drive.google.com/embeddedfolderview?id=${d.id}#list` : `https://drive.google.com/file/d/${d.id}/preview`;
+const download = (d: Doc) => `https://drive.google.com/uc?export=download&id=${d.id}`;
+---
+<section class="docs" aria-labelledby="docs-title">
+  <h2 id="docs-title">{t.title}</h2>
+  {documents.length === 0 ? <p class="docs-soon">{t.soon}</p> : (
+    <ul>
+      {documents.map((d, i) => (
+        <li class="doc">
+          <div class="doc-head">
+            <div>
+              <h3>{d.title}</h3>
+              {d.description && <p>{d.description}</p>}
+            </div>
+            <div class="doc-actions">
+              {d.type === 'file' && <a class="btn" href={download(d)} rel="noopener">{t.download} ↓</a>}
+              <a class="btn" href={view(d)} rel="noopener">{t.open} ↗</a>
+              <button class="btn btn-solid" type="button" data-doc-toggle={`doc-${i}`} data-show={t.show} data-hide={t.hide} aria-expanded="false" aria-controls={`doc-${i}`}>{t.show}</button>
+            </div>
+          </div>
+          <div class="doc-frame" id={`doc-${i}`} data-src={embed(d)} hidden>
+            <p class="meta">{t.privacy}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  )}
+</section>

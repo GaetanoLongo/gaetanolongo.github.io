@@ -292,3 +292,21 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
   .print-url { display: block; margin-top: 1.2cm; font: 8pt var(--mono); color: #555; }
 }
 .mail i { font-style: normal; }
+
+/* ───────── Documents (notes with files on Drive) ───────── */
+.docs { max-width: 50rem; margin-top: 3.5rem; padding-top: 1.3rem; border-top: 1px solid var(--line); }
+.docs > h2 { font-size: 1.6rem; margin-bottom: 1.2rem; }
+.docs ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.doc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.2rem; }
+.doc-head { display: flex; flex-wrap: wrap; gap: .9rem 1.5rem; align-items: center; justify-content: space-between; }
+.doc-head h3 { font-size: 1.2rem; }
+.doc-head p { margin: .2rem 0 0; color: var(--muted); font-size: .95rem; }
+.doc-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.doc .btn { text-decoration: none; display: inline-block; }
+.btn-solid { background: var(--ink); color: var(--bg); }
+.btn-solid:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.doc-frame { margin-top: 1rem; }
+.doc-frame .meta { margin: 0 0 .6rem; }
+.doc-frame iframe { width: 100%; height: min(80vh, 46rem); min-height: 22rem; border: 1px solid var(--line); border-radius: 6px; background: var(--code-bg); }
+.docs-soon { color: var(--muted); }
+@media print { .docs { display: none; } }
