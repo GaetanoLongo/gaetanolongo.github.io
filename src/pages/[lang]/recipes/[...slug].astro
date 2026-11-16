@@ -64,7 +64,7 @@ const parent = d.partOf ? await getEntry('recipes', `${lang}/${d.partOf}`) : und
     <div class="recipe-body">
       <aside class="ingredients">
         <h2>{r.ingredients}</h2>
-        <ul>{d.ingredients.map((x) => <li><span class="q">{x.q}</span><span>{x.i}</span></li>)}</ul>
+        <ul>{d.ingredients.map((x) => x.h ? <li class="grp">{x.h}</li> : <li><span class="q">{x.q}</span><span>{x.i}</span></li>)}</ul>
       </aside>
       <section class="method">
         <h2>{r.method}</h2>

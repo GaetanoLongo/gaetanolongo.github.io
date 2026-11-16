@@ -57,7 +57,8 @@ const recipes = defineCollection({
     sourceUrl: z.string().url().optional(), // makes the credit line a link
     calculator: z.enum(['liqueur']).optional(), // shows the liqueur calculator under the recipe
     tags: z.array(z.string()).default([]),
-    ingredients: z.array(z.object({ q: z.string(), i: z.string() })).default([]),
+    // Each line is { q, i } (quantity, ingredient), or { h } for a group heading such as "First dough".
+    ingredients: z.array(z.object({ q: z.string().optional(), i: z.string().optional(), h: z.string().optional() })).default([]),
     // A recipe that is only a page linking several versions of the same dish.
     versions: z.array(z.object({ slug: z.string(), title: z.string(), description: z.string().optional() })).optional(),
     // On a version page: the slug of the page that groups the versions.

@@ -101,6 +101,7 @@ sourceUrl: "https://…"      # optional: makes the source line a link
 calculator: "liqueur"   # optional: shows the liqueur calculator under the recipe
 tags: ["bread"]
 ingredients:
+  - { h: "Optional group heading" }   # use to split long lists, e.g. "First dough"
   - { q: "500 g", i: "Flour" }
   - { q: "10 g", i: "Salt" }
 ---
