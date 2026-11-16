@@ -1,15 +1,34 @@
 ---
 title: "Chi sono"
-description: "Interessi e personalità."
+description: "Niente di interessante onestamente."
 ---
 
-*(Segnaposto: scrivilo con la tua voce.)*
+Ho 35 anni, vivo a Bologna e non mi piacciono le autodescrizioni.
 
-Sono un ingegnere elettrico a cui piace capire come funzionano le cose, e poi costruirne una versione migliore. L'elettronica di potenza è il lavoro; spettroscopia, lievito madre e piccoli strumenti sono il resto.
+<div class="cols">
+<div>
 
-## Interessi
+## Interessi generali
 
-- Elettronica di potenza e magnetici
-- Spettroscopia
-- Pane, e cucina in generale
-- Costruire piccoli strumenti davvero utili
+- Viaggi
+- Musica e concerti
+- Cucina e lievitati
+- Leggere la qualsiasi<sup>*</sup>
+
+<p class="fine"><sup>*</sup> a parte giornali e i libri di merda</p>
+
+</div>
+<div>
+
+## Interessi da nerd
+
+- Elettronica di potenza, analogica ed elettrotecnica
+- Progettazione di circuiti stampati
+- EMC
+- Tecnica delle alte tensioni
+- Uno strumento super-segreto che chissà se funzionerà mai
+- Un giorno mi progetterò e costruirò un intero sistema audio *(ma se nel frattempo vuoi regalarmelo vai nella sezione [contatti](/it/contact/))*
+- Ambiente Linux e self-hosting
+
+</div>
+</div>

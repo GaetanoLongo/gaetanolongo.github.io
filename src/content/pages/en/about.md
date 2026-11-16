@@ -1,15 +1,34 @@
 ---
 title: "About"
-description: "Interests and personality."
+description: "Nothing interesting, honestly."
 ---
 
-*(Placeholder: write this in your own voice.)*
+I'm 35, I live in Bologna and I don't like self-descriptions.
 
-I'm an electrical engineer who likes understanding how things work, and then building a better version of them. Power electronics is the day job; spectroscopy, sourdough and small tools are the rest.
+<div class="cols">
+<div>
 
-## Interests
+## General interests
 
-- Power electronics and magnetics
-- Spectroscopy
-- Bread, and cooking in general
-- Building small tools that are actually useful
+- Travel
+- Music and concerts
+- Cooking and leavened doughs
+- Reading anything<sup>*</sup>
+
+<p class="fine"><sup>*</sup> except newspapers and shitty books</p>
+
+</div>
+<div>
+
+## Nerd interests
+
+- Power electronics, analog and electrical engineering
+- PCB design
+- EMC
+- High-voltage engineering
+- A super-secret instrument that may or may not ever work
+- One day I'll design and build an entire audio system *(but if you'd like to gift me one in the meantime, head to the [contact](/en/contact/) section)*
+- Linux and self-hosting
+
+</div>
+</div>

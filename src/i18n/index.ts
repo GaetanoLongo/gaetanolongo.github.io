@@ -9,9 +9,9 @@ export const ui = {
     role: 'Electrical engineer',
     nav: { home: 'Home', notes: 'Technical notes', projects: 'Projects', recipes: 'Recipes', cv: 'CV', about: 'About', contact: 'Contact' },
     greeting: "Hi, I’m Gaetano",
-    tagline: 'Electrical engineer, maker and amateur of many things.',
+    tagline: 'Too lazy for a description.',
     intro:
-      'I work in power electronics, build useful tools, and enjoy diving deep into the physics behind things — from converters to spectroscopy, from sourdough to whatever comes next.',
+      'I work in electronics, but I like to travel, go to concerts, cook, knead dough, tend the little vegetable garden, drink good wine…',
     sections: {
       notes: { title: 'Technical notes', lead: 'Articles, experiments and explanations.' },
       projects: { title: 'Projects', lead: 'Things I have designed and built.' },
@@ -45,9 +45,9 @@ export const ui = {
     role: 'Ingegnere elettrico',
     nav: { home: 'Home', notes: 'Note tecniche', projects: 'Progetti', recipes: 'Ricette', cv: 'CV', about: 'Chi sono', contact: 'Contatti' },
     greeting: 'Ciao, sono Gaetano',
-    tagline: 'Ingegnere elettrico, maker e appassionato di molte cose.',
+    tagline: 'Troppo pigro per una descrizione.',
     intro:
-      'Mi occupo di elettronica di potenza, costruisco strumenti utili e mi piace andare a fondo nella fisica delle cose — dai convertitori alla spettroscopia, dal lievito madre a qualunque cosa venga dopo.',
+      'Mi occupo di elettronica, ma mi piace viaggiare, andare ai concerti, cucinare, impastare, curare l’orticello, bere del buon vino…',
     sections: {
       notes: { title: 'Note tecniche', lead: 'Articoli, esperimenti e spiegazioni.' },
       projects: { title: 'Progetti', lead: 'Cose che ho progettato e costruito.' },

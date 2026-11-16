@@ -81,6 +81,10 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
   background: var(--side);
   border-right: 1px solid var(--line);
 }
+.brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--ink); }
+.avatar { border-radius: 50%; object-fit: cover; flex: none; border: 1px solid var(--line); }
+.sidebar .avatar { width: 2.75rem; height: 2.75rem; }
+.topbar .avatar { width: 2rem; height: 2rem; }
 .wordmark {
   font: 700 1.6rem/1.05 var(--display);
   letter-spacing: -0.03em;
@@ -131,6 +135,15 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; letter-spacing: 
 .hero { padding: clamp(.5rem, 3vw, 2.5rem) 0 3rem; max-width: 52rem; }
 .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; letter-spacing: -0.045em; line-height: .98; }
 .hero h1 .dot { color: var(--accent); }
+.caret { display: inline-block; width: .5ch; height: .82em; margin-left: .08em; vertical-align: -.04em; background: var(--accent); animation: blink 1.05s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 3rem; margin-top: 1.5rem; }
+.cols h2 { margin-top: 0; }
+.cols > div { min-width: 0; }
+.cols li { text-align: left; hyphens: manual; }
+.fine { font-size: .82rem; color: var(--muted); }
+@media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
 .hero .tagline { font: 500 clamp(1.3rem, 2.4vw, 1.75rem)/1.3 var(--display); color: var(--accent); margin: 1.4rem 0 1.2rem; letter-spacing: -0.01em; }
 .hero .intro { font-size: 1.2rem; max-width: 38rem; margin: 0; }
 
