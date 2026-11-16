@@ -11,7 +11,7 @@ ingredients:
   - { h: "For the focaccia" }
   - { q: "250 g (9 oz)", i: "Plain flour (Italian 00)" }
   - { q: "250 g (9 oz)", i: "Manitoba flour (strong bread flour)" }
-  - { q: "300 ml (10 fl oz)", i: "Milk" }
+  - { q: "300 ml (10 fl oz)", i: "Milk (keep 100 ml / 3½ fl oz aside)" }
   - { q: "200 ml (6¾ fl oz)", i: "Water" }
   - { q: "70 g (2½ oz)", i: "Extra virgin olive oil" }
   - { q: "20 g (¾ oz)", i: "Fresh yeast" }
@@ -30,10 +30,10 @@ ingredients:
 
 You need a 28 cm (11 in) round baking tin.
 
-1. Dissolve the yeast in the lukewarm mixture of milk and water.
+1. Dissolve the yeast in the lukewarm mixture of water and milk, keeping 100 ml (3½ fl oz) of the milk aside.
 2. Put the two flours in a bowl, adding the oil, the salt and the sugar.
-3. Start working the dough and add the mixture of milk, water and yeast in a thin stream, while you keep working.
-4. The dough will be very soft: don't worry, that is normal.
+3. Start working the dough and add the 100 ml (3½ fl oz) of reserved milk in a thin stream, while you keep working.
+4. The dough will be very soft: don't worry, that is normal. Don't knead it the way you would normal bread.
 5. Line a tin with a sheet of baking parchment and pour in the dough.
 6. Shake the tin a little to level it and let it rise in a warm place for 1 hour, or until it has doubled in volume.
 7. Brush the surface with milk and sprinkle with sesame seeds.
