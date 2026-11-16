@@ -1,0 +1,38 @@
+---
+import 'katex/dist/katex.min.css';
+import Base from '../../../layouts/Base.astro';
+import Maturity from '../../../components/Maturity.astro';
+import { ui, other, type Lang } from '../../../i18n';
+import { getCollection, splitId, hasTranslation, fmtDate } from '../../../lib/content';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+  return (await getCollection('notes')).map((entry) => {
+    const { lang, slug } = splitId(entry.id);
+    return { params: { lang, slug }, props: { entry } };
+  });
+}
+const { entry } = Astro.props;
+const lang = Astro.params.lang as Lang;
+const slug = Astro.params.slug as string;
+const t = ui[lang];
+const { Content } = await render(entry);
+const d = entry.data;
+const switchHref = (await hasTranslation('notes', lang, slug))
+  ? `/${other(lang)}/notes/${slug}/` : `/${other(lang)}/notes/`;
+---
+<Base lang={lang} title={d.title} description={d.description} active="notes" switchHref={switchHref}>
+  <article>
+    <header class="article-head">
+      <a class="meta" href={`/${lang}/notes/`}>← {t.sections.notes.title}</a>
+      <h1>{d.title}</h1>
+      <p class="lead">{d.description}</p>
+      <div class="meta-line">
+        <time class="meta" datetime={d.date.toISOString()}>{fmtDate(d.date, t.locale)}</time>
+        <Maturity lang={lang} level={d.maturity} />
+        {d.tags.length > 0 && <span class="chips">{d.tags.map((x) => <span class="chip">{x}</span>)}</span>}
+      </div>
+    </header>
+    <div class="prose"><Content /></div>
+  </article>
+</Base>

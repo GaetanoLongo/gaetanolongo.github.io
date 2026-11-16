@@ -1,0 +1,158 @@
+---
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource-variable/hanken-grotesk';
+import '@fontsource-variable/jetbrains-mono';
+import '../styles/global.css';
+import { ui, accents, other, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  active?: 'home' | 'notes' | 'projects' | 'recipes' | 'cv' | 'about' | 'contact';
+  /** Where the language switch should point. Defaults to the same path in the other language. */
+  switchHref?: string;
+}
+const { lang, title, description, active, switchHref } = Astro.props;
+const t = ui[lang];
+const o = other(lang);
+const href = (p: string) => `/${lang}/${p}`;
+const alt = switchHref ?? Astro.url.pathname.replace(/^\/(en|it)\//, `/${o}/`);
+const pageTitle = active === 'home' ? `Gaetano Longo — ${t.role}` : `${title} · Gaetano Longo`;
+const nav = [
+  ['home', ''],
+  ['notes', 'notes/'],
+  ['projects', 'projects/'],
+  ['recipes', 'recipes/'],
+  ['cv', 'cv/'],
+  ['about', 'about/'],
+  ['contact', 'contact/'],
+] as const;
+---
+<!doctype html>
+<html lang={t.htmlLang} data-theme="light" data-accent="oxide">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description ?? t.tagline} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" hreflang={o} href={new URL(alt, Astro.site)} />
+    <!-- Apply saved theme/accent before first paint to avoid a flash -->
+    <script is:inline>
+      try {
+        var d = document.documentElement, s = localStorage;
+        var th = s.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        d.dataset.theme = th;
+        d.dataset.accent = s.getItem('accent') || 'oxide';
+      } catch (e) {}
+    </script>
+    <noscript><style>.sidebar{transform:none!important;position:static!important}.topbar{display:none}</style></noscript>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href={href('')}>Gaetano Longo</a>
+      <button id="menu-btn" type="button" aria-expanded="false" aria-controls="sidebar">{t.ui.menu}</button>
+    </header>
+
+    <div class="shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="wordmark" href={href('')}>Gaetano Longo</a>
+        <p class="role">{t.role}</p>
+
+        <nav aria-label="Main">
+          <ul>
+            {nav.map(([key, path], i) => (
+              <>
+                {(key === 'notes' || key === 'cv') && <li class="gap" aria-hidden="true"></li>}
+                <li>
+                  <a href={href(path)} aria-current={active === key ? 'page' : undefined}>{t.nav[key]}</a>
+                </li>
+              </>
+            ))}
+          </ul>
+        </nav>
+
+        <div class="side-foot">
+          <p class="label">{t.ui.elsewhere}</p>
+          <ul class="elsewhere">
+            <li><a href="https://github.com/gaetanolongo" rel="me">GitHub ↗</a></li>
+            <li><a href="https://www.linkedin.com/in/gaetanolongo/" rel="me">LinkedIn ↗</a></li>
+          </ul>
+
+          <div class="controls">
+            <div class="lang" role="group" aria-label={t.ui.language}>
+              <a href={alt} hreflang={o} lang={o} class="lang-other" aria-label={o === 'it' ? 'Italiano' : 'English'}>{o.toUpperCase()}</a>
+              <span aria-current="true">{lang.toUpperCase()}</span>
+            </div>
+            <div class="swatches" role="group" aria-label={t.ui.accent}>
+              {accents.map((a) => (
+                <button type="button" class="swatch" data-accent-set={a.id} title={a.label} aria-label={a.label} aria-pressed="false"></button>
+              ))}
+            </div>
+            <button type="button" id="theme-btn" class="icon-btn" aria-label={t.ui.theme} title={t.ui.theme}>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main" id="main">
+        <slot />
+        <footer class="site-foot">
+          <span>© {new Date().getFullYear()} Gaetano Longo</span>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      const root = document.documentElement;
+      const store = {
+        get: (k: string) => { try { return localStorage.getItem(k); } catch { return null; } },
+        set: (k: string, v: string) => { try { localStorage.setItem(k, v); } catch {} },
+      };
+      const syncSwatches = () =>
+        document.querySelectorAll<HTMLButtonElement>('[data-accent-set]').forEach((b) =>
+          b.setAttribute('aria-pressed', String(b.dataset.accentSet === root.dataset.accent)));
+      syncSwatches();
+
+      document.querySelectorAll<HTMLButtonElement>('[data-accent-set]').forEach((b) =>
+        b.addEventListener('click', () => {
+          root.dataset.accent = b.dataset.accentSet!;
+          store.set('accent', root.dataset.accent);
+          syncSwatches();
+        }));
+
+      document.getElementById('theme-btn')?.addEventListener('click', () => {
+        root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        store.set('theme', root.dataset.theme);
+      });
+
+      // Follow the OS setting until the visitor picks one explicitly.
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!store.get('theme')) root.dataset.theme = e.matches ? 'dark' : 'light';
+      });
+
+      const menu = document.getElementById('menu-btn');
+      menu?.addEventListener('click', () => {
+        const open = document.body.dataset.nav !== 'open';
+        document.body.dataset.nav = open ? 'open' : '';
+        menu.setAttribute('aria-expanded', String(open));
+      });
+
+      // Email is stored encoded (and reversed for no-JS readers) to keep scrapers out.
+      document.querySelectorAll<HTMLElement>('.mail[data-e]').forEach((el) => {
+        try {
+          const addr = atob(el.dataset.e!);
+          const a = document.createElement('a');
+          a.href = 'mailto:' + addr;
+          a.textContent = addr;
+          el.replaceChildren(a);
+        } catch {}
+      });
+
+      document.querySelectorAll<HTMLButtonElement>('[data-print]').forEach((b) =>
+        b.addEventListener('click', () => window.print()));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+---
+import { ui, type Lang } from '../i18n';
+interface Props { lang: Lang; title: string; description: string; kind: string; url?: string; tags?: string[] }
+const { lang, title, description, kind, url, tags = [] } = Astro.props;
+const t = ui[lang];
+---
+<article class="card">
+  <div class="top"><span class="meta">{kind}</span></div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  {tags.length > 0 && <div class="chips">{tags.map((x) => <span class="chip">{x}</span>)}</div>}
+  {url
+    ? <span class="go">{t.open} ↗</span>
+    : <span class="go off">{t.comingSoon}</span>}
+  {url && <a class="stretch" href={url} aria-label={`${title} ↗`} rel="noopener"></a>}
+</article>

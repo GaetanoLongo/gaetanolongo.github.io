@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import NoteRow from '../../components/NoteRow.astro';
+import RecipeCard from '../../components/RecipeCard.astro';
+import { languages, ui, type Lang } from '../../i18n';
+import { getCollection, inLang } from '../../lib/content';
+
+export const getStaticPaths = () => languages.map((lang) => ({ params: { lang } }));
+const lang = Astro.params.lang as Lang;
+const t = ui[lang];
+
+const projects = inLang(await getCollection('projects'), lang).sort((a, b) => a.entry.data.order - b.entry.data.order);
+const notes = inLang(await getCollection('notes'), lang).sort((a, b) => +b.entry.data.date - +a.entry.data.date).slice(0, 3);
+const recipes = inLang(await getCollection('recipes'), lang).sort((a, b) => +b.entry.data.date - +a.entry.data.date).slice(0, 3);
+---
+<Base lang={lang} title={t.greeting} active="home">
+  <section class="hero">
+    <h1>{t.greeting}<span class="dot">.</span></h1>
+    <p class="tagline">{t.tagline}</p>
+    <p class="intro">{t.intro}</p>
+  </section>
+
+  <section class="section">
+    <SectionHead title={t.recent.projects} href={`/${lang}/projects/`} more={t.viewAll} />
+    <div class="cards">
+      {projects.map(({ entry }) => <ProjectCard lang={lang} {...entry.data} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHead title={t.recent.notes} href={`/${lang}/notes/`} more={t.viewAll} />
+    {notes.length ? (
+      <ul class="rows">{notes.map(({ entry, slug }) => <NoteRow lang={lang} slug={slug} {...entry.data} />)}</ul>
+    ) : <p class="empty">{t.empty}</p>}
+  </section>
+
+  <section class="section">
+    <SectionHead title={t.recent.recipes} href={`/${lang}/recipes/`} more={t.viewAll} />
+    {recipes.length ? (
+      <div class="cards">{recipes.map(({ entry, slug }) => <RecipeCard lang={lang} slug={slug} {...entry.data} />)}</div>
+    ) : <p class="empty">{t.empty}</p>}
+  </section>
+</Base>

@@ -1,0 +1,17 @@
+---
+import Base from '../../../layouts/Base.astro';
+import RecipeCard from '../../../components/RecipeCard.astro';
+import { languages, ui, type Lang } from '../../../i18n';
+import { getCollection, inLang } from '../../../lib/content';
+
+export const getStaticPaths = () => languages.map((lang) => ({ params: { lang } }));
+const lang = Astro.params.lang as Lang;
+const s = ui[lang].sections.recipes;
+const items = inLang(await getCollection('recipes'), lang).sort((a, b) => +b.entry.data.date - +a.entry.data.date);
+---
+<Base lang={lang} title={s.title} description={s.lead} active="recipes">
+  <div class="page-head"><h1>{s.title}</h1><p>{s.lead}</p></div>
+  {items.length
+    ? <div class="cards">{items.map(({ entry, slug }) => <RecipeCard lang={lang} slug={slug} {...entry.data} />)}</div>
+    : <p class="empty">{ui[lang].empty}</p>}
+</Base>

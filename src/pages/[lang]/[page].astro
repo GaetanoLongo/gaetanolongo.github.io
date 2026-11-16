@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { ui, other, type Lang } from '../../i18n';
+import { getCollection, splitId } from '../../lib/content';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+  return (await getCollection('pages')).map((entry) => {
+    const { lang, slug } = splitId(entry.id);
+    return { params: { lang, page: slug }, props: { entry } };
+  });
+}
+const { entry } = Astro.props;
+const lang = Astro.params.lang as Lang;
+const page = Astro.params.page as 'cv' | 'about' | 'contact';
+const { Content } = await render(entry);
+---
+<Base lang={lang} title={entry.data.title} description={entry.data.description} active={page} switchHref={`/${other(lang)}/${page}/`}>
+  <div class="page">
+    <div class="page-head"><h1>{entry.data.title}</h1><p>{entry.data.description}</p></div>
+    <div class="prose"><Content /></div>
+  </div>
+</Base>

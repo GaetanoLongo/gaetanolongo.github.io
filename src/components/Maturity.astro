@@ -1,0 +1,10 @@
+---
+import { ui, type Lang } from '../i18n';
+interface Props { lang: Lang; level: 'seedling' | 'growing' | 'evergreen' }
+const { lang, level } = Astro.props;
+const n = { seedling: 1, growing: 2, evergreen: 3 }[level];
+---
+<span class="maturity" title={ui[lang].maturityHelp}>
+  <i aria-hidden="true">{[1, 2, 3].map((k) => <b class={k <= n ? 'on' : ''}></b>)}</i>
+  {ui[lang].maturity[level]}
+</span>

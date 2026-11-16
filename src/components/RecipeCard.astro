@@ -1,0 +1,13 @@
+---
+import { ui, type Lang } from '../i18n';
+interface Props { lang: Lang; slug: string; title: string; description: string; prep: string; cook?: string; tags?: string[] }
+const { lang, slug, title, description, prep, cook, tags = [] } = Astro.props;
+const total = [prep, cook].filter(Boolean).join(' + ');
+---
+<article class="card">
+  <div class="top"><span class="meta">{total}</span></div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  {tags.length > 0 && <div class="chips">{tags.map((x) => <span class="chip">{x}</span>)}</div>}
+  <a class="stretch" href={`/${lang}/recipes/${slug}/`} aria-label={title}></a>
+</article>
