@@ -5,9 +5,15 @@ description: "Esperienza professionale e competenze."
 
 ## Profilo
 
-Ingegnere elettrico, mi occupo di elettronica di potenza e convertitori. Ho progettato convertitori per istituti di ricerca e per l'industria della fusione nucleare, ho guidato un team hardware di cinque persone e ora lavoro in R&D in un'azienda di macchine per l'industria del tabacco.
+<div class="cv-profile">
+<img class="cv-photo" src="/avatar-large.jpg" alt="" width="460" height="460" />
+<p>Ingegnere elettrico, mi occupo di elettronica di potenza e convertitori. Ho progettato convertitori per istituti di ricerca e per l'industria della fusione nucleare, ho guidato un team hardware di cinque persone e ora lavoro in R&D in un'azienda di macchine per l'industria del tabacco.</p>
+</div>
 
 ## Esperienza
+
+<div class="cv-entry">
+<img class="cv-logo" src="/logos/almasens.png" alt="Almasens" loading="lazy" />
 
 ### HW Engineer · Montrade SpA / Almasens
 <p class="cv-meta">Ago 2024 – oggi</p>
@@ -17,6 +23,11 @@ Almasens è la divisione R&D di Montrade SpA, che produce macchinari per l'indus
 - Progetto di un driver per elettrovalvola per aumentare la velocità di commutazione, dai requisiti al progetto finale della scheda e alla validazione.
 - Sviluppo di un sistema di spettroscopia nel vicino infrarosso per la misura senza contatto di umidità e contenuto di nicotina, inclusi progetto ottico, hardware elettronico e metodologia di misura.
 - Studio di fattibilità per l'aggiornamento di una sorgente di potenza impulsata per la generazione di plasma freddo (fino a 2 kW di picco) con tecnica di compressione magnetica.
+
+</div>
+
+<div class="cv-entry">
+<img class="cv-logo" src="/logos/ocem.png" alt="OCEM Power Electronics" loading="lazy" />
 
 ### HW team leader · OCEM Power Electronics
 <p class="cv-meta">Mag 2017 – Ago 2024</p>
@@ -30,6 +41,8 @@ OCEM Power Electronics è specializzata in convertitori di potenza su misura. Da
 - collaborato con i reparti meccanica, controllo e acquisti;
 - lavorato con i fornitori e scritto specifiche per componenti custom come trasformatori, assiemi a semiconduttore e banchi di supercondensatori.
 
+</div>
+
 ### Progetti selezionati come responsabile tecnico
 
 - **Convertitori per i dipoli principali di APS**: `+1500 V / 500 A` e `+1000 V / 220 A`. Due convertitori per il sistema di magneti del sincrotrone Advanced Photon Source (Argonne, USA), con accuratezza di 10 ppm e stabilità di corrente su una settimana. Raffreddati ad acqua.
@@ -38,20 +51,35 @@ OCEM Power Electronics è specializzata in convertitori di potenza su misura. Da
 
 ## Formazione
 
+<div class="cv-entry">
+<img class="cv-logo" src="/logos/unibo.png" alt="Università di Bologna" loading="lazy" />
+
 ### Laurea magistrale in Ingegneria Elettrica · Università di Bologna
 <p class="cv-meta">Laureato a ott 2017 · 110/110</p>
 
 Tesi svolta in OCEM Power Electronics: analisi e simulazione di uno stadio correttore di fattore di potenza per un alimentatore industriale da 10 kW. Tra gli insegnamenti: azionamenti elettrici e loro controllo, elettronica di potenza, mobilità sostenibile e veicoli ibridi, energie rinnovabili, sistemi elettrici di potenza, modellazione di processo in Matlab/Simulink, misure elettriche.
+
+</div>
+
+<div class="cv-entry">
+<img class="cv-logo" src="/logos/unibo.png" alt="Università di Bologna" loading="lazy" />
 
 ### Borsista · Laboratorio di Tecnologie Innovative, Università di Bologna
 <p class="cv-meta">Giu 2014 – Ott 2015</p>
 
 Borsa di studio su un banco di prova per la valutazione dell'affidabilità di motori elettrici per trazione. Ho lavorato al circuito ad alta tensione che simula una forma d'onda tipo PWM (30 kV) e alla simulazione e realizzazione della sua elettronica di controllo, progettata per massimizzare l'immunità ai disturbi e minimizzare le emissioni.
 
+</div>
+
+<div class="cv-entry">
+<img class="cv-logo" src="/logos/unibo.png" alt="Università di Bologna" loading="lazy" />
+
 ### Laurea triennale in Ingegneria Elettrica · Università di Bologna
 <p class="cv-meta">Set 2010 – Giu 2014 · 92/100</p>
 
 Tesi sperimentale: un sistema per la rilevazione a ultrasuoni di scariche parziali nei trasformatori di potenza. Tra gli insegnamenti: impianti elettrici di potenza, tecniche dell'alta tensione, macchine elettriche, diagnostica dei sistemi elettrici, elettronica e progettazione di dispositivi elettromeccanici.
+
+</div>
 
 ## Competenze
 
@@ -69,10 +97,21 @@ IEC 62477 (sicurezza dei sistemi di conversione elettronica), IEC 60076 (trasfor
 
 ### Software
 
-- Simulazione: LTspice, QSpice e PLECS (avanzato); MATLAB e Simulink (intermedio)
-- Progetto PCB: KiCad (intermedio)
-- Programmazione: Python con NumPy e Conda (base), C (base)
-- CAD (base); Windows e Linux
+<ul class="sw-grid">
+<li><span class="sw-ico" style="--i:url(/sw/ltspice.svg)" aria-hidden="true"></span><span class="sw-name">LTspice</span><span class="sw-lv">avanzato</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">Q</span><span class="sw-name">QSpice</span><span class="sw-lv">avanzato</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">P</span><span class="sw-name">PLECS</span><span class="sw-lv">avanzato</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">M</span><span class="sw-name">MATLAB</span><span class="sw-lv">intermedio</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">S</span><span class="sw-name">Simulink</span><span class="sw-lv">intermedio</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/kicad.svg)" aria-hidden="true"></span><span class="sw-name">KiCad</span><span class="sw-lv">intermedio</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/python.svg)" aria-hidden="true"></span><span class="sw-name">Python</span><span class="sw-lv">base</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/numpy.svg)" aria-hidden="true"></span><span class="sw-name">NumPy</span><span class="sw-lv">base</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/anaconda.svg)" aria-hidden="true"></span><span class="sw-name">Conda</span><span class="sw-lv">base</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/c.svg)" aria-hidden="true"></span><span class="sw-name">C</span><span class="sw-lv">base</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">CAD</span><span class="sw-name">CAD</span><span class="sw-lv">base</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/linux.svg)" aria-hidden="true"></span><span class="sw-name">Linux</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">W</span><span class="sw-name">Windows</span></li>
+</ul>
 
 ## Lingue
 

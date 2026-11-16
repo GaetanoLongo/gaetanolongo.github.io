@@ -5,9 +5,15 @@ description: "Professional experience and skills."
 
 ## Profile
 
-Electrical engineer working on power electronics and converters. I have designed converters for research institutes and for the nuclear fusion industry, led a hardware team of five, and now work in R&D at a tobacco machinery manufacturer.
+<div class="cv-profile">
+<img class="cv-photo" src="/avatar-large.jpg" alt="" width="460" height="460" />
+<p>Electrical engineer working on power electronics and converters. I have designed converters for research institutes and for the nuclear fusion industry, led a hardware team of five, and now work in R&D at a tobacco machinery manufacturer.</p>
+</div>
 
 ## Experience
+
+<div class="cv-entry">
+<img class="cv-logo" src="/logos/almasens.png" alt="Almasens" loading="lazy" />
 
 ### HW Engineer · Montrade SpA / Almasens
 <p class="cv-meta">Aug 2024 – present</p>
@@ -17,6 +23,11 @@ Almasens is the R&D division of Montrade SpA, which makes machinery for the toba
 - Design of an electrovalve driver to improve switching speed, from requirements to final board design and validation.
 - Development of a near-infrared spectroscopy system for non-contact measurement of moisture and nicotine content, including optical design, electronic hardware and measurement methodology.
 - Feasibility study for upgrading a pulsed power source for cold plasma generation (up to 2 kW peak) using magnetic compression.
+
+</div>
+
+<div class="cv-entry">
+<img class="cv-logo" src="/logos/ocem.png" alt="OCEM Power Electronics" loading="lazy" />
 
 ### HW team leader · OCEM Power Electronics
 <p class="cv-meta">May 2017 – Aug 2024</p>
@@ -30,6 +41,8 @@ OCEM Power Electronics specialises in customised power converters. From July 202
 - worked with the mechanical, control and purchasing departments;
 - worked with suppliers and wrote specifications for custom components such as transformers, semiconductor assemblies and supercapacitor banks.
 
+</div>
+
 ### Selected projects as technical lead
 
 - **APS main dipole converters**: `+1500 V / 500 A` and `+1000 V / 220 A`. Two converters for the magnet system of the Advanced Photon Source synchrotron (Argonne, USA), with 10 ppm accuracy and current stability over one week. Water-cooled.
@@ -38,20 +51,35 @@ OCEM Power Electronics specialises in customised power converters. From July 202
 
 ## Education
 
+<div class="cv-entry">
+<img class="cv-logo" src="/logos/unibo.png" alt="Università di Bologna" loading="lazy" />
+
 ### M.Sc. Electrical Engineering · Università di Bologna
 <p class="cv-meta">Graduated Oct 2017 · 110/110</p>
 
 Thesis, carried out at OCEM Power Electronics: analysis and simulation of a power factor corrector stage for a 10 kW industrial power supply. Subjects included motor drives and their control, power electronics, sustainable mobility and hybrid vehicles, renewable energy, power systems, process modelling in Matlab/Simulink, and electrical measurements.
+
+</div>
+
+<div class="cv-entry">
+<img class="cv-logo" src="/logos/unibo.png" alt="Università di Bologna" loading="lazy" />
 
 ### Scholarship fellow · Laboratory of Innovative Technologies, Università di Bologna
 <p class="cv-meta">Jun 2014 – Oct 2015</p>
 
 Scholarship on a test bench for reliability assessment of electrical motors used in traction. I worked on the high-voltage circuit simulating a PWM-like waveform (30 kV) and on the simulation and design of its control electronics, built to maximise noise immunity and minimise emissions.
 
+</div>
+
+<div class="cv-entry">
+<img class="cv-logo" src="/logos/unibo.png" alt="Università di Bologna" loading="lazy" />
+
 ### B.Sc. Electrical Engineering · Università di Bologna
 <p class="cv-meta">Sep 2010 – Jun 2014 · 92/100</p>
 
 Experimental thesis: a system for ultrasonic detection of partial discharges in power transformers. Subjects included electrical power plants, high-voltage techniques, electrical machinery, diagnostics of electrical systems, electronics and electromechanical device design.
+
+</div>
 
 ## Skills
 
@@ -69,10 +97,21 @@ IEC 62477 (safety of power electronic converter systems), IEC 60076 (power trans
 
 ### Software
 
-- Simulation: LTspice, QSpice and PLECS (advanced); MATLAB and Simulink (intermediate)
-- PCB design: KiCad (intermediate)
-- Programming: Python with NumPy and Conda (basic), C (basic)
-- CAD (basic); Windows and Linux
+<ul class="sw-grid">
+<li><span class="sw-ico" style="--i:url(/sw/ltspice.svg)" aria-hidden="true"></span><span class="sw-name">LTspice</span><span class="sw-lv">advanced</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">Q</span><span class="sw-name">QSpice</span><span class="sw-lv">advanced</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">P</span><span class="sw-name">PLECS</span><span class="sw-lv">advanced</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">M</span><span class="sw-name">MATLAB</span><span class="sw-lv">intermediate</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">S</span><span class="sw-name">Simulink</span><span class="sw-lv">intermediate</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/kicad.svg)" aria-hidden="true"></span><span class="sw-name">KiCad</span><span class="sw-lv">intermediate</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/python.svg)" aria-hidden="true"></span><span class="sw-name">Python</span><span class="sw-lv">basic</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/numpy.svg)" aria-hidden="true"></span><span class="sw-name">NumPy</span><span class="sw-lv">basic</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/anaconda.svg)" aria-hidden="true"></span><span class="sw-name">Conda</span><span class="sw-lv">basic</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/c.svg)" aria-hidden="true"></span><span class="sw-name">C</span><span class="sw-lv">basic</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">CAD</span><span class="sw-name">CAD</span><span class="sw-lv">basic</span></li>
+<li><span class="sw-ico" style="--i:url(/sw/linux.svg)" aria-hidden="true"></span><span class="sw-name">Linux</span></li>
+<li><span class="sw-ico mono" aria-hidden="true">W</span><span class="sw-name">Windows</span></li>
+</ul>
 
 ## Languages
 
