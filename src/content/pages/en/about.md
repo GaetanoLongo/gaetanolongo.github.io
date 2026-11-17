@@ -1,9 +1,9 @@
 ---
 title: "About"
-description: "Nothing interesting, honestly."
+description: "self-descriptions aren’t my strong suit"
 ---
 
-I'm 35, I live in Bologna and I don't like self-descriptions.
+I’m 35, I live in Bologna. What else do you want to know?
 
 <div class="cols">
 <div>

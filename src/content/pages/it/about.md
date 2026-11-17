@@ -1,9 +1,9 @@
 ---
 title: "Chi sono"
-description: "Niente di interessante onestamente."
+description: "le autodescrizioni non sono il mio forte"
 ---
 
-Ho 35 anni, vivo a Bologna e non mi piacciono le autodescrizioni.
+Ho 35 anni, vivo a Bologna. Cosa altro vuoi sapere?
 
 <div class="cols">
 <div>

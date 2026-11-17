@@ -17,7 +17,7 @@ const recipes = inLang(await getCollection('recipes'), lang).filter((x) => !x.en
 ---
 <Base lang={lang} title={t.greeting} active="home">
   <section class="hero">
-    <h1 class="type" data-type={t.greeting + '.'} aria-label={t.greeting}><span class="typed">{t.greeting}</span><span class="dot">.</span><span class="caret" aria-hidden="true"></span></h1>
+    <h1 class="type" data-type={t.greeting} aria-label={t.greeting}><span class="typed">{t.greeting}</span><span class="caret" aria-hidden="true"></span></h1>
     <p class="tagline">{t.tagline}</p>
     <p class="intro">{t.intro}</p>
   </section>
@@ -48,15 +48,12 @@ const recipes = inLang(await getCollection('recipes'), lang).filter((x) => !x.en
       if (!h) return;
       var full = h.getAttribute('data-type');
       var out = h.querySelector('.typed');
-      var dot = h.querySelector('.dot');
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      out.textContent = ''; dot.textContent = '';
+      out.textContent = '';
       var i = 0;
       (function tick() {
         i++;
-        var txt = full.slice(0, i);
-        out.textContent = txt.replace(/\.$/, '');
-        dot.textContent = /\.$/.test(txt) ? '.' : '';
+        out.textContent = full.slice(0, i);
         if (i < full.length) setTimeout(tick, 70 + Math.random() * 60);
       })();
     })();
